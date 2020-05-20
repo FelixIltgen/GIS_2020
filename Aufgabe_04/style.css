@@ -1,0 +1,176 @@
+
+body{
+    width: 1200px;
+    margin: 0px auto 0px auto;
+}
+/*-----Header & CO-----*/
+header{
+    width: 1200px;
+    text-align: center;
+    margin: 20px auto 50px auto;
+    font-family: FreeMono, monospace;
+    font-size: larger;
+    background-color: rgb(212, 206, 206);
+}
+/*-----Navigation-----*/
+nav{
+    text-align: center;
+    position: sticky;
+    position: sticky;
+    top: 5%;
+    height: 50px;
+}
+nav a{
+    text-decoration: none;
+    margin: auto 60px auto 60px;
+    text-align: center;
+    border: solid black 3px;
+    border-radius: 30px;
+    padding: 10px 20px 10px 20px;
+    font-family: FreeMono, monospace;
+    font-size: larger;
+    color: brown;
+    transition: 0.3s;
+    background-color: rgb(137, 207, 137);
+}
+nav a:hover{
+    background-color: rgb(160, 158, 158);
+}
+/*-----About-----*/
+.about{
+    text-align: center;
+    background-color: wheat;
+    height: 300px;
+    border: solid black 3px;
+    border-radius: 15px;
+}
+.about h2{
+    font-size: 30px;
+    font-style: FreeMono, monospace;
+    color: brown;
+}
+.about p{
+    font-size: medium;
+    font-family: FreeMono, monospace;
+    margin: auto auto 50px auto;
+}
+.about .los{
+   
+    text-decoration: none;
+    color:rgba(248, 141, 0, 0.815);
+    font-size: 30px;
+    border: solid rgba(248, 141, 0, 0.815) 3px;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    font-family: FreeMono, monospace;
+    transition: 0.3s;
+}
+.about a:hover{
+    color: rgb(0, 72, 155);
+    border: solid rgb(0, 72, 155) 3px;
+
+}
+/*best sellers*/
+
+.best{
+    display: flex;
+    background-color: violet;
+    margin-top: 30px;
+}
+.best div{
+    width: 200px;
+    height: 250px;
+    margin: auto;
+    background-color: teal;
+}
+/*-----Shop-----*/
+.shop1{
+    display: flex;
+    height: 700px;
+    margin-top: 50px; 
+}
+.shop1 .uno{
+    width: 500px;
+    height: 700px;
+    margin: 20px auto 20px auto;
+    text-align: center;
+    border: black solid 3px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-family: FreeMono, monospace;
+    color: brown;
+    font-size: larger;
+}
+.shop1 .uno:hover{
+    background-color: rgb(190, 188, 188);
+}
+.shop1 .dos{
+    width: 500px;
+    height: 700px;
+    margin: 20px auto 20px auto;
+    text-align: center;
+    border: black solid 3px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-family: FreeMono, monospace;
+    color: brown;
+    font-size: larger;
+}
+.shop1 .dos:hover{
+    background-color: rgb(190, 188, 188);
+}
+img{
+    margin-bottom: 50px;
+}
+.shop1 a{
+    text-decoration: none;
+    margin: 450px auto 30px auto;
+    color:rgba(248, 141, 0, 0.815);
+    font-size: 30px;
+    border: solid rgba(248, 141, 0, 0.815) 3px;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    font-family: FreeMono, monospace;
+    transition: 0.3s;
+}
+.shop1 a:hover{
+    color: rgb(0, 72, 155);
+    border: solid rgb(0, 72, 155) 3px;
+}
+/*-----Fruits-----*/
+body{
+    text-align: center;
+    font-family: FreeMono, monospace;
+
+}
+.fmain{
+    display: flex;
+}
+.fmain .pic{
+    margin: auto;
+    width: 200px;
+    height: 500px;
+
+    font-size: larger;
+    border: solid black 3px;
+    border-radius: 15px;
+}
+.fmain .pic p{
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+.fmain .pic a{
+    color:rgba(248, 141, 0, 0.815);
+    font-size: 30px;
+    border: solid rgba(248, 141, 0, 0.815) 3px;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    font-family: FreeMono, monospace;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.fmain .pic a:hover{
+    color: rgb(0, 72, 155);
+    border: solid rgb(0, 72, 155) 3px;
+}
+

@@ -1,0 +1,132 @@
+body{
+    background-image: url("hintergrund.png");
+}
+#navigation{
+    width: 400px;
+    height: 25px;
+    background-color: black;
+    margin: -20px auto auto 900px;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 20px 10px 30px;
+    color: white;
+    font-size: larger;
+    font-family: FreeMono, monospace;
+    position: sticky;
+    top: 0;
+}
+#navigation a{
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+    font-family: FreeMono, monospace;
+    position: sticky;
+    top: 0;
+    padding-left: 5px;
+}
+ #navigation a:hover{
+    color: red;   
+}
+#kopf{
+    width: 800px;
+    height: 800px;
+    margin: -400px auto auto auto;
+    background-color: orangered;
+    border-radius: 50%;  
+}
+#kopf h1{
+    font-size: 170px;
+    padding-top: 40%;
+    font-family: Noto Sans, sans-serif;
+    text-align: center;
+    color: white;
+}
+#kopf p{
+    font-size: 50px;
+    font-family: Noto Sans, sans-serif;
+    text-align: center;
+    margin: -120px auto auto 40%;
+    color: white;
+}
+#videos{
+    width: 800px;
+    color: orangered;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 80px auto auto 25%;  
+}
+#videoinhalt{
+    width: 800px;
+    margin: 50px auto auto auto;
+    text-align: center;
+    font-size: larger;
+    font-family: FreeMono, monospace;
+    color: chocolate;
+}
+#bilder{
+    width: 800px;
+    color: orangered;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 50px auto auto 25%;
+}
+#bildinhalt{
+    width: 800px;
+    margin: 50px auto auto auto;
+    text-align: center;
+    font-size: larger;
+    font-family: FreeMono, monospace;
+    color: chocolate;
+}
+#übermich{
+    width: 800px;
+    color: orangered;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 100px auto auto 25%;
+}
+#ich{
+    width: 800px;
+    color: orangered;
+    font-family: FreeMono, monospace;
+    font-size: 20px;
+    margin: 50px auto 50px auto;
+    text-align: center;
+}
+#ich a{
+    text-decoration: none;
+    color: chocolate;
+    font-family: FreeMono, monospace;
+}
+#ich a:hover{
+    text-decoration: underline;
+}
+#a{
+    text-decoration: none;
+    color:chocolate;
+    font-family: FreeMono, monospace;
+    font-size: larger;    
+}
+#a:hover{
+    color: rgb(8, 32, 112);
+}
+#pb{
+    width: 300px;
+    border: black solid 2px;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 50px auto auto auto;
+}
+#formular{
+    width: 320px;
+    background-color:chocolate;
+    margin: 5% auto auto auto;
+    font-family: FreeMono, monospace;
+    font-size: larger;
+    border: black solid 3px;
+    padding: 5px 10px 5px 10px;   
+}
+#frage{
+    text-align: center;
+}
+
+
