@@ -54,8 +54,7 @@ nav a:hover{
     font-family: FreeMono, monospace;
     margin: auto auto 50px auto;
 }
-.about .los{
-   
+.about .los{ 
     text-decoration: none;
     color:rgba(248, 141, 0, 0.815);
     font-size: 30px;
@@ -68,10 +67,8 @@ nav a:hover{
 .about a:hover{
     color: rgb(0, 72, 155);
     border: solid rgb(0, 72, 155) 3px;
-
 }
 /*best sellers*/
-
 .best{
     display: flex;
     background-color: violet;
@@ -141,7 +138,6 @@ img{
 body{
     text-align: center;
     font-family: FreeMono, monospace;
-
 }
 .fmain{
     display: flex;
