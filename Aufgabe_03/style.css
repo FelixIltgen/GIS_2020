@@ -1,11 +1,11 @@
 body{
     background-image: url("hintergrund.png");
 }
-#navigation{
+nav{
     width: 400px;
     height: 25px;
     background-color: black;
-    margin: -20px auto auto 900px;
+    margin: -20px auto auto 750px;
     border-radius: 0 0 10px 10px;
     padding: 10px 20px 10px 30px;
     color: white;
@@ -14,7 +14,7 @@ body{
     position: sticky;
     top: 0;
 }
-#navigation a{
+nav a{
     color: white;
     text-decoration: none;
     font-size: larger;
@@ -23,15 +23,17 @@ body{
     top: 0;
     padding-left: 5px;
 }
- #navigation a:hover{
-    color: red;   
+ nav a:hover{
+    color: red;
+    font-family: FreeMono, monospace;  
 }
 #kopf{
     width: 800px;
     height: 800px;
     margin: -400px auto auto auto;
     background-color: orangered;
-    border-radius: 50%;  
+    border-radius: 50%; 
+    text-align: center; 
 }
 #kopf h1{
     font-size: 170px;
@@ -47,6 +49,17 @@ body{
     margin: -120px auto auto 40%;
     color: white;
 }
+ #kopf img{
+    width: 64px;
+    padding-top: 50px;
+    padding-left: 10px;   
+ }
+ #kopf img:hover{
+     padding-left: 10px;
+    width: 64px;
+    height: 50px;
+    transition: 0.5s;
+ }
 #videos{
     width: 800px;
     color: orangered;
@@ -61,6 +74,10 @@ body{
     font-size: larger;
     font-family: FreeMono, monospace;
     color: chocolate;
+}
+#gg{
+    width: 350px;
+    background-color: red;
 }
 #bilder{
     width: 800px;
@@ -77,28 +94,62 @@ body{
     font-family: FreeMono, monospace;
     color: chocolate;
 }
-#übermich{
-    width: 800px;
-    color: orangered;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    margin: 100px auto auto 25%;
-}
 #ich{
     width: 800px;
     color: orangered;
     font-family: FreeMono, monospace;
     font-size: 20px;
-    margin: 50px auto 50px auto;
+    margin: 30px auto 50px auto;
     text-align: center;
 }
 #ich a{
     text-decoration: none;
-    color: chocolate;
+    color: black;
     font-family: FreeMono, monospace;
 }
 #ich a:hover{
     text-decoration: underline;
+}
+#profil{
+    width: 900px;
+    margin: 50px auto auto auto;
+    font-family: FreeMono, monospace;
+    color: orangered;
+}
+#profil h2{
+    margin: -560px auto auto 350px;
+    font-size: 30px;
+    color: black;
+}
+#profil p{
+    margin: 20px auto auto 350px;
+    font-size: larger;
+}
+#profil img{
+    border:  black solid 2px;
+    border-radius: 3px;
+    padding: 5px;
+}
+#profil2{
+    width: 900px;
+    margin: 50px auto auto auto;
+    font-family: FreeMono, monospace;
+    font-size: larger;
+    color: orangered;
+}
+#profil2 p{
+    
+    margin: -420px 370px auto 10px  ;
+}
+#profil2 img{
+    width: 300px; 
+    margin: 30px auto auto 585px; 
+    border: black solid 2px;
+    border-radius: 3px;
+    padding: 5px;
+}
+.frage{
+    margin-top: 200px;
 }
 #a{
     text-decoration: none;
@@ -109,13 +160,6 @@ body{
 #a:hover{
     color: rgb(8, 32, 112);
 }
-#pb{
-    width: 300px;
-    border: black solid 2px;
-    border-radius: 3px;
-    padding: 10px;
-    margin: 50px auto auto auto;
-}
 #formular{
     width: 320px;
     background-color:chocolate;
@@ -125,8 +169,10 @@ body{
     border: black solid 3px;
     padding: 5px 10px 5px 10px;   
 }
-#frage{
+.frage{
     text-align: center;
+    margin: 200px auto auto auto;
 }
+
 
 
