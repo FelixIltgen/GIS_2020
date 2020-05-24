@@ -37,7 +37,10 @@ nav{
     justify-content: space-around;
     margin-bottom: 50px;
     position: sticky;
-    top: 5%;   
+    top: 0;
+    background-color:  rgb(176, 176, 190);
+    padding: 40px;
+    border-radius: 15px;
 }
 nav a{
     text-decoration: none;
