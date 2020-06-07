@@ -55,9 +55,21 @@ nav a{
 }
 nav a:hover{
     background-color: rgb(44, 236, 108);
-
 }
-
+#count{
+    background-color: rgb(120, 125, 123);
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;  
+}
+#zahl{
+    color:salmon;
+    margin-top: 6px;
+}
 h2{
     text-align: center;
     font-family: FreeMono, monospace;
@@ -68,8 +80,10 @@ h2{
     justify-content: center;
     margin-bottom: 90px;
 }
-#inhalt1, #inhalt0, #inhalt2, #inhalt21, #inhalt20, #inhalt22, #inhalt31, #inhalt30, #inhalt32,
-#inhalt41, #inhalt40, #inhalt42{
+#inhalt1, #inhalt0, #inhalt2,
+#inhalt3, #inhalt4, #inhalt5,
+#inhalt6, #inhalt7, #inhalt8,
+#inhalt9, #inhalt10, #inhalt11{
     width: 250px;
     color: cornflowerblue;
     border: solid black 3px;
@@ -82,29 +96,29 @@ h2{
     font-family: FreeMono, monospace;
 }
 #inhalt1 img, #inhalt0 img, #inhalt2 img,
-#inhalt21 img, #inhalt20 img, #inhalt22 img,
-#inhalt31 img, #inhalt30 img, #inhalt32 img,
-#inhalt41 img, #inhalt40 img, #inhalt42 img{
+#inhalt3 img, #inhalt4 img, #inhalt5 img,
+#inhalt6 img, #inhalt7 img, #inhalt8 img,
+#inhalt9 img, #inhalt10 img, #inhalt11 img{
     width: 200px;
 }
 #inhalt1 h3, #inhalt0 h3, #inhalt2 h3,
-#inhalt21 h3, #inhalt20 h3, #inhalt22 h3,
-#inhalt31 h3, #inhalt30 h3, #inhalt32 h3,
-#inhalt41 h3, #inhalt40 h3, #inhalt42 h3{
+#inhalt3 h3, #inhalt4 h3, #inhalt5 h3,
+#inhalt6 h3, #inhalt7 h3, #inhalt8 h3,
+#inhalt9 h3, #inhalt10 h3, #inhalt11 h3{
     color: goldenrod;
     font-size: 25px;
 }
 #test1 , #test0 , #test2,
-#test21 , #test20 , #test22,
-#test31 , #test30 , #test32,
-#test41 , #test40 , #test42{
+#test3 , #test4 , #test5,
+#test6 , #test7 , #test8,
+#test9 , #test10 , #test11{
     font-size: 20px;
     color:red;
 }
 #inhalt1 a, #inhalt0 a, #inhalt2 a,
-#inhalt21 a, #inhalt20 a, #inhalt22 a,
-#inhalt31 a, #inhalt30 a, #inhalt32 a,
-#inhalt41 a, #inhalt40 a, #inhalt42 a{
+#inhalt3 a, #inhalt4 a, #inhalt5 a,
+#inhalt6 a, #inhalt7 a, #inhalt8 a,
+#inhalt9 a, #inhalt10 a, #inhalt11 a{
     text-decoration: none;
     color:rgba(248, 141, 0, 0.815);
     font-size: 30px;
@@ -113,9 +127,9 @@ h2{
     margin-top: 20px;
 }
 #inhalt0 a:hover, #inhalt1 a:hover, #inhalt2 a:hover,
-#inhalt20 a:hover, #inhalt21 a:hover, #inhalt22 a:hover,
-#inhalt30 a:hover, #inhalt31 a:hover, #inhalt32 a:hover,
-#inhalt40 a:hover, #inhalt41 a:hover, #inhalt42 a:hover{
+#inhalt3 a:hover, #inhalt4 a:hover, #inhalt5 a:hover,
+#inhalt6 a:hover, #inhalt7 a:hover, #inhalt8 a:hover,
+#inhalt9 a:hover, #inhalt10 a:hover, #inhalt11 a:hover{
     color: rgb(0, 72, 155);
     border: solid rgb(0, 72, 155) 3px;
     border-radius: 5px;

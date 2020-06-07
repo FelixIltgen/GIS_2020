@@ -1,3 +1,4 @@
+namespace Aufgabe5 {
 interface Naturel {
 
     name: string;
@@ -182,4 +183,5 @@ for (let index: number = 0; index < mitCo2.length; index++) {
     let buy: HTMLAnchorElement = document.createElement("a");
     buy.innerHTML = "kaufen";
     document.getElementById("inhalt4" + index)?.appendChild(buy);
+}
 }
