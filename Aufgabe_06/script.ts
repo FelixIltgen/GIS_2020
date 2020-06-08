@@ -31,7 +31,7 @@ namespace Aufgabe6 {
     let viel: Artikel = { name: "Mit 80 %", img: "gas3.png", preis: 55.99, beschreibung: "Mit ca. 80% Co<sub>2</sub>, für richtige Feuerwehrmänner.", kategorie: 4 };
 
     //Array  Mit Co2
-    let baumhaus: Artikel[] = [etwas, wenig, viel, banane, kirsche, kiwi, klein, mittel, groß, alpen, bolivien, everest];
+    let artikel: Artikel[] = [etwas, wenig, viel, banane, kirsche, kiwi, klein, mittel, groß, alpen, bolivien, everest];
     let navigation: string[] = ["Natureller Sauerstoff", "Zum Inhalieren", "Mit Geschmack", "Mit Co<sub>2</sub>", "Alle"];
 
     for (let index: number = 0; index < navigation.length; index++) {
@@ -46,57 +46,58 @@ namespace Aufgabe6 {
 
         switch ((<HTMLDivElement>_event.target).getAttribute("Navigation")) {
             case "0":
-                (<HTMLElement>document.getElementById("ü2")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü3")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü4")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü1")).style.display = "block" ;
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "flex" ;
-                
+                (<HTMLElement>document.getElementById("ü2")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü1")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "flex";
+
                 break;
             case "1":
-                (<HTMLElement>document.getElementById("ü1")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü3")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü4")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü2")).style.display = "block" ;
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "flex" ;
+                (<HTMLElement>document.getElementById("ü1")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü2")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "flex";
 
                 break;
             case "2":
-                (<HTMLElement>document.getElementById("ü1")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü2")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü4")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü3")).style.display = "block" ;
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "flex" ;
+                (<HTMLElement>document.getElementById("ü1")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü2")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "flex";
 
                 break;
             case "3":
-                (<HTMLElement>document.getElementById("ü1")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü3")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü2")).style.display = "none" ;
-                (<HTMLElement>document.getElementById("ü4")).style.display = "block" ;
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none" ;
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "flex" ;
+                (<HTMLElement>document.getElementById("ü1")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü2")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "flex";
                 break;
             case "4":
-                (<HTMLElement>document.getElementById("ü1")).style.display = "block" ;
-                (<HTMLElement>document.getElementById("ü3")).style.display = "block" ;
-                (<HTMLElement>document.getElementById("ü4")).style.display = "block" ;
-                (<HTMLElement>document.getElementById("ü2")).style.display = "block" ;
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "flex" ;
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "flex" ;
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "flex" ;
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "flex" ;
+
+                (<HTMLElement>document.getElementById("ü1")).style.display = "block";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "block";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "block";
+                (<HTMLElement>document.getElementById("ü2")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "flex";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "flex";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "flex";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "flex";
                 break;
 
             default:
@@ -105,12 +106,12 @@ namespace Aufgabe6 {
     }
 
 
-    for (let index: number = 0; index < baumhaus.length; index++) {
+    for (let index: number = 0; index < artikel.length; index++) {
 
         let newDiv: HTMLDivElement = document.createElement("div");
         newDiv.id = "inhalt" + index;
 
-        switch (baumhaus[index].kategorie) {
+        switch (artikel[index].kategorie) {
             case 1:
                 document.getElementById("shop1")?.appendChild(newDiv);
                 break;
@@ -128,28 +129,28 @@ namespace Aufgabe6 {
         }
 
         let name: HTMLParagraphElement = document.createElement("h3");
-        name.innerHTML = baumhaus[index].name;
+        name.innerHTML = artikel[index].name;
         document.getElementById("inhalt" + index)?.appendChild(name);
 
         let imgElement: HTMLImageElement = document.createElement("img");
-        imgElement.src = baumhaus[index].img;
+        imgElement.src = artikel[index].img;
         document.getElementById("inhalt" + index)?.appendChild(imgElement);
 
         let geld: HTMLParagraphElement = document.createElement("p");
-        geld.innerHTML = baumhaus[index].preis + " Euro";
+        geld.innerHTML = artikel[index].preis + " Euro";
         geld.id = "test" + index;
         document.getElementById("inhalt" + index)?.appendChild(geld);
 
 
         let besch: HTMLParagraphElement = document.createElement("p");
-        besch.innerHTML = baumhaus[index].beschreibung;
+        besch.innerHTML = artikel[index].beschreibung;
         document.getElementById("inhalt" + index)?.appendChild(besch);
 
         let buy: HTMLAnchorElement = document.createElement("a");
         buy.innerHTML = "kaufen";
         document.getElementById("inhalt" + index)?.appendChild(buy);
-        buy.setAttribute("data-karl", baumhaus[index].preis + "");
-        buy.addEventListener("click", test69);
+        buy.setAttribute("data-preistag", artikel[index].preis + "");
+        buy.addEventListener("click", clickEvent);
     }
 
 
@@ -161,7 +162,7 @@ namespace Aufgabe6 {
     zähler.id = "zahl";
     let summe: number = 0;
 
-    function test69(_event: Event): void {
+    function clickEvent(_event: Event): void {
         zaehler++;
         if (zaehler == 1) {
 
@@ -172,9 +173,9 @@ namespace Aufgabe6 {
         if (zaehler > 1) {
             zähler.innerHTML = zaehler + "";
         }
-        let irgendwas: HTMLAnchorElement = _event.target as HTMLAnchorElement;
-        let irgendwas2: string = irgendwas.dataset.karl as string;
-        summe = summe + parseFloat(irgendwas2);
+        let aElement: HTMLAnchorElement = _event.target as HTMLAnchorElement;
+        let stringElement: string = aElement.dataset.preistag as string;
+        summe = summe + parseFloat(stringElement);
         console.log(summe + " Euro");
 
     }

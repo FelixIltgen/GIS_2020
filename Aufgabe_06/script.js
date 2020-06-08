@@ -18,7 +18,7 @@ var Aufgabe6;
     let wenig = { name: "Mit 50 %", img: "gas2.png", preis: 35.99, beschreibung: "Mit ca. 50% Co<sub>2</sub>, nichts für schwache Nerven.", kategorie: 4 };
     let viel = { name: "Mit 80 %", img: "gas3.png", preis: 55.99, beschreibung: "Mit ca. 80% Co<sub>2</sub>, für richtige Feuerwehrmänner.", kategorie: 4 };
     //Array  Mit Co2
-    let baumhaus = [etwas, wenig, viel, banane, kirsche, kiwi, klein, mittel, groß, alpen, bolivien, everest];
+    let artikel = [etwas, wenig, viel, banane, kirsche, kiwi, klein, mittel, groß, alpen, bolivien, everest];
     let navigation = ["Natureller Sauerstoff", "Zum Inhalieren", "Mit Geschmack", "Mit Co<sub>2</sub>", "Alle"];
     for (let index = 0; index < navigation.length; index++) {
         let nav = document.createElement("a");
@@ -83,10 +83,10 @@ var Aufgabe6;
                 break;
         }
     }
-    for (let index = 0; index < baumhaus.length; index++) {
+    for (let index = 0; index < artikel.length; index++) {
         let newDiv = document.createElement("div");
         newDiv.id = "inhalt" + index;
-        switch (baumhaus[index].kategorie) {
+        switch (artikel[index].kategorie) {
             case 1:
                 document.getElementById("shop1")?.appendChild(newDiv);
                 break;
@@ -103,23 +103,23 @@ var Aufgabe6;
                 break;
         }
         let name = document.createElement("h3");
-        name.innerHTML = baumhaus[index].name;
+        name.innerHTML = artikel[index].name;
         document.getElementById("inhalt" + index)?.appendChild(name);
         let imgElement = document.createElement("img");
-        imgElement.src = baumhaus[index].img;
+        imgElement.src = artikel[index].img;
         document.getElementById("inhalt" + index)?.appendChild(imgElement);
         let geld = document.createElement("p");
-        geld.innerHTML = baumhaus[index].preis + " Euro";
+        geld.innerHTML = artikel[index].preis + " Euro";
         geld.id = "test" + index;
         document.getElementById("inhalt" + index)?.appendChild(geld);
         let besch = document.createElement("p");
-        besch.innerHTML = baumhaus[index].beschreibung;
+        besch.innerHTML = artikel[index].beschreibung;
         document.getElementById("inhalt" + index)?.appendChild(besch);
         let buy = document.createElement("a");
         buy.innerHTML = "kaufen";
         document.getElementById("inhalt" + index)?.appendChild(buy);
-        buy.setAttribute("data-karl", baumhaus[index].preis + "");
-        buy.addEventListener("click", test69);
+        buy.setAttribute("data-preistag", artikel[index].preis + "");
+        buy.addEventListener("click", clickEvent);
     }
     //Warenkorb Counter
     let zaehler = 0;
@@ -128,7 +128,7 @@ var Aufgabe6;
     let zähler = document.createElement("p");
     zähler.id = "zahl";
     let summe = 0;
-    function test69(_event) {
+    function clickEvent(_event) {
         zaehler++;
         if (zaehler == 1) {
             document.getElementById("header")?.appendChild(newDiv);
@@ -138,9 +138,9 @@ var Aufgabe6;
         if (zaehler > 1) {
             zähler.innerHTML = zaehler + "";
         }
-        let irgendwas = _event.target;
-        let irgendwas2 = irgendwas.dataset.karl;
-        summe = summe + parseFloat(irgendwas2);
+        let aElement = _event.target;
+        let stringElement = aElement.dataset.preistag;
+        summe = summe + parseFloat(stringElement);
         console.log(summe + " Euro");
     }
 })(Aufgabe6 || (Aufgabe6 = {}));
