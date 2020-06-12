@@ -6,11 +6,13 @@ var Aufgabe7;
         let rückgabe2 = await rückgabe1.json();
         Aufgabe7.artikel = JSON.parse(JSON.stringify(rückgabe2));
     }
+    //Datenladen
     verzögern();
     async function verzögern() {
         await laden("shopdaten.json");
         seiteladen();
     }
+    // Seite laden
     function seiteladen() {
         let navigation = ["Natureller Sauerstoff", "Zum Inhalieren", "Mit Geschmack", "Mit Co<sub>2</sub>", "Alle"];
         for (let index = 0; index < navigation.length; index++) {
@@ -20,6 +22,7 @@ var Aufgabe7;
             nav.setAttribute("Navigation", index + "");
             nav.addEventListener("click", ausblenden);
         }
+        //Artikel generieren
         for (let index = 0; index < Aufgabe7.artikel.length; index++) {
             let newDiv = document.createElement("div");
             newDiv.id = "inhalt" + index;
@@ -57,6 +60,7 @@ var Aufgabe7;
             document.getElementById("inhalt" + index)?.appendChild(buy);
             buy.setAttribute("data-preistag", Aufgabe7.artikel[index].preis + "");
             buy.addEventListener("click", clickEvent);
+            buy.addEventListener("click", datenSpeichern);
         }
     }
     //Warenkorb Counter
@@ -81,6 +85,7 @@ var Aufgabe7;
         summe = summe + parseFloat(stringElement);
         console.log(summe + " Euro");
     }
+    //Kategorien Ausblenden
     function ausblenden(_event) {
         switch (_event.target.getAttribute("Navigation")) {
             case "0":
@@ -137,5 +142,11 @@ var Aufgabe7;
                 break;
         }
     }
+    function datenSpeichern(_event) {
+        localStorage.setItem("kategorie", "test");
+        localStorage.setItem("kategorie1", "sssoooo");
+        console.log(localStorage.getItem("kategorie1"));
+    }
+    console.log(localStorage.getItem("kategorie"));
 })(Aufgabe7 || (Aufgabe7 = {}));
 //# sourceMappingURL=ladenSkript.js.map

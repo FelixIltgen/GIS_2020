@@ -5,13 +5,13 @@ namespace Aufgabe7 {
         let rückgabe2: JSON = await rückgabe1.json();
         artikel = JSON.parse(JSON.stringify(rückgabe2));
     }
-
+    //Datenladen
     verzögern();
     async function verzögern(): Promise<void> {
         await laden("shopdaten.json");
         seiteladen();
     }
-
+    // Seite laden
     function seiteladen(): void {
         let navigation: string[] = ["Natureller Sauerstoff", "Zum Inhalieren", "Mit Geschmack", "Mit Co<sub>2</sub>", "Alle"];
 
@@ -22,7 +22,7 @@ namespace Aufgabe7 {
             nav.setAttribute("Navigation", index + "");
             nav.addEventListener("click", ausblenden);
         }
-
+        //Artikel generieren
         for (let index: number = 0; index < artikel.length; index++) {
 
             let newDiv: HTMLDivElement = document.createElement("div");
@@ -68,6 +68,7 @@ namespace Aufgabe7 {
             document.getElementById("inhalt" + index)?.appendChild(buy);
             buy.setAttribute("data-preistag", artikel[index].preis + "");
             buy.addEventListener("click", clickEvent);
+            buy.addEventListener("click", datenSpeichern);
         }
     }
 
@@ -96,7 +97,7 @@ namespace Aufgabe7 {
         console.log(summe + " Euro");
 
     }
-
+    //Kategorien Ausblenden
     function ausblenden(_event: Event): void {
 
         switch ((<HTMLDivElement>_event.target).getAttribute("Navigation")) {
@@ -159,4 +160,14 @@ namespace Aufgabe7 {
                 break;
         }
     }
+
+    function datenSpeichern(_event: Event): void {
+            localStorage.setItem("kategorie", "test");
+            localStorage.setItem("kategorie1", "sssoooo");
+            console.log(localStorage.getItem("kategorie1")!);
+            
+    }
+
+    console.log(localStorage.getItem("kategorie")!);
+    
 }
