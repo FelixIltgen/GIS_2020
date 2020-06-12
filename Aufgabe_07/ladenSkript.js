@@ -1,74 +1,25 @@
 "use strict";
 var Aufgabe7;
 (function (Aufgabe7) {
-    let navigation = ["Natureller Sauerstoff", "Zum Inhalieren", "Mit Geschmack", "Mit Co<sub>2</sub>", "Alle"];
-    for (let index = 0; index < navigation.length; index++) {
-        let nav = document.createElement("a");
-        nav.innerHTML = navigation[index];
-        document.getElementById("nav")?.appendChild(nav);
-        nav.setAttribute("Navigation", index + "");
-        nav.addEventListener("click", ausblenden);
-    }
-    function ausblenden(_event) {
-        switch (_event.target.getAttribute("Navigation")) {
-            case "0":
-                document.getElementById("ü2").style.display = "none";
-                document.getElementById("ü3").style.display = "none";
-                document.getElementById("ü4").style.display = "none";
-                document.getElementById("ü1").style.display = "block";
-                document.getElementById("shop2").style.display = "none";
-                document.getElementById("shop3").style.display = "none";
-                document.getElementById("shop4").style.display = "none";
-                document.getElementById("shop1").style.display = "flex";
-                break;
-            case "1":
-                document.getElementById("ü1").style.display = "none";
-                document.getElementById("ü3").style.display = "none";
-                document.getElementById("ü4").style.display = "none";
-                document.getElementById("ü2").style.display = "block";
-                document.getElementById("shop1").style.display = "none";
-                document.getElementById("shop3").style.display = "none";
-                document.getElementById("shop4").style.display = "none";
-                document.getElementById("shop2").style.display = "flex";
-                break;
-            case "2":
-                document.getElementById("ü1").style.display = "none";
-                document.getElementById("ü2").style.display = "none";
-                document.getElementById("ü4").style.display = "none";
-                document.getElementById("ü3").style.display = "block";
-                document.getElementById("shop1").style.display = "none";
-                document.getElementById("shop2").style.display = "none";
-                document.getElementById("shop4").style.display = "none";
-                document.getElementById("shop3").style.display = "flex";
-                break;
-            case "3":
-                document.getElementById("ü1").style.display = "none";
-                document.getElementById("ü3").style.display = "none";
-                document.getElementById("ü2").style.display = "none";
-                document.getElementById("ü4").style.display = "block";
-                document.getElementById("shop1").style.display = "none";
-                document.getElementById("shop3").style.display = "none";
-                document.getElementById("shop2").style.display = "none";
-                document.getElementById("shop4").style.display = "flex";
-                break;
-            case "4":
-                document.getElementById("ü1").style.display = "block";
-                document.getElementById("ü3").style.display = "block";
-                document.getElementById("ü4").style.display = "block";
-                document.getElementById("ü2").style.display = "block";
-                document.getElementById("shop1").style.display = "flex";
-                document.getElementById("shop3").style.display = "flex";
-                document.getElementById("shop4").style.display = "flex";
-                document.getElementById("shop2").style.display = "flex";
-                break;
-            default:
-                break;
-        }
+    async function laden(_url) {
+        let rückgabe1 = await fetch(_url);
+        let rückgabe2 = await rückgabe1.json();
+        Aufgabe7.artikel = JSON.parse(JSON.stringify(rückgabe2));
     }
     verzögern();
     async function verzögern() {
-        console.log("test");
-        await Aufgabe7.l("shopdaten.json");
+        await laden("shopdaten.json");
+        seiteladen();
+    }
+    function seiteladen() {
+        let navigation = ["Natureller Sauerstoff", "Zum Inhalieren", "Mit Geschmack", "Mit Co<sub>2</sub>", "Alle"];
+        for (let index = 0; index < navigation.length; index++) {
+            let nav = document.createElement("a");
+            nav.innerHTML = navigation[index];
+            document.getElementById("nav")?.appendChild(nav);
+            nav.setAttribute("Navigation", index + "");
+            nav.addEventListener("click", ausblenden);
+        }
         for (let index = 0; index < Aufgabe7.artikel.length; index++) {
             let newDiv = document.createElement("div");
             newDiv.id = "inhalt" + index;
@@ -129,6 +80,62 @@ var Aufgabe7;
         let stringElement = aElement.dataset.preistag;
         summe = summe + parseFloat(stringElement);
         console.log(summe + " Euro");
+    }
+    function ausblenden(_event) {
+        switch (_event.target.getAttribute("Navigation")) {
+            case "0":
+                document.getElementById("ü2").style.display = "none";
+                document.getElementById("ü3").style.display = "none";
+                document.getElementById("ü4").style.display = "none";
+                document.getElementById("ü1").style.display = "block";
+                document.getElementById("shop2").style.display = "none";
+                document.getElementById("shop3").style.display = "none";
+                document.getElementById("shop4").style.display = "none";
+                document.getElementById("shop1").style.display = "flex";
+                break;
+            case "1":
+                document.getElementById("ü1").style.display = "none";
+                document.getElementById("ü3").style.display = "none";
+                document.getElementById("ü4").style.display = "none";
+                document.getElementById("ü2").style.display = "block";
+                document.getElementById("shop1").style.display = "none";
+                document.getElementById("shop3").style.display = "none";
+                document.getElementById("shop4").style.display = "none";
+                document.getElementById("shop2").style.display = "flex";
+                break;
+            case "2":
+                document.getElementById("ü1").style.display = "none";
+                document.getElementById("ü2").style.display = "none";
+                document.getElementById("ü4").style.display = "none";
+                document.getElementById("ü3").style.display = "block";
+                document.getElementById("shop1").style.display = "none";
+                document.getElementById("shop2").style.display = "none";
+                document.getElementById("shop4").style.display = "none";
+                document.getElementById("shop3").style.display = "flex";
+                break;
+            case "3":
+                document.getElementById("ü1").style.display = "none";
+                document.getElementById("ü3").style.display = "none";
+                document.getElementById("ü2").style.display = "none";
+                document.getElementById("ü4").style.display = "block";
+                document.getElementById("shop1").style.display = "none";
+                document.getElementById("shop3").style.display = "none";
+                document.getElementById("shop2").style.display = "none";
+                document.getElementById("shop4").style.display = "flex";
+                break;
+            case "4":
+                document.getElementById("ü1").style.display = "block";
+                document.getElementById("ü3").style.display = "block";
+                document.getElementById("ü4").style.display = "block";
+                document.getElementById("ü2").style.display = "block";
+                document.getElementById("shop1").style.display = "flex";
+                document.getElementById("shop3").style.display = "flex";
+                document.getElementById("shop4").style.display = "flex";
+                document.getElementById("shop2").style.display = "flex";
+                break;
+            default:
+                break;
+        }
     }
 })(Aufgabe7 || (Aufgabe7 = {}));
 //# sourceMappingURL=ladenSkript.js.map

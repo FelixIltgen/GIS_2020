@@ -75,11 +75,12 @@ h2{
     font-family: FreeMono, monospace;
     font-size: 50px;
 }
-.naturel, .inhalier, .geschmack, .co2{
+.naturel, .inhalier, .geschmack, .co2, .warenkorb{
     display: flex;
     justify-content: center;
     margin-bottom: 90px;
 }
+
 #inhalt1, #inhalt0, #inhalt2,
 #inhalt3, #inhalt4, #inhalt5,
 #inhalt6, #inhalt7, #inhalt8,

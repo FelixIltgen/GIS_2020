@@ -6,7 +6,7 @@
 {"name": "30 Liter", "img": "inhalator2.png", "preis": 15.99, "beschreibung": "Für den längeren Nutzen und für zwischen durch.", "kategorie": "inhalier"},
 {"name": "60 Liter", "img": "inhalator1.png","preis": 30.99,"beschreibung":"Damit überlebt ihr zwei Tage im brennenden Haus","kategorie":"inhalier"},
 
-{"name":"Banane","img":"banane,png","preis":15.99,"beschreibung":"Vollmundig im Geschmack <br> 100% natürlich.","kategorie":"frucht"},
+{"name":"Banane","img":"banane.png","preis":15.99,"beschreibung":"Vollmundig im Geschmack <br> 100% natürlich.","kategorie":"frucht"},
 {"name":"Kirsche","img":"Kirsche.png","preis":17.99,"beschreibung":"Fast wie Mon Chéri <br> 100% natürlich","kategorie":"frucht"},
 {"name":"Kiwi","img":"kiwi.png","preis":19.99,"beschreibung":"Schmeckt wie frisch gepflückt 100 % natürlich.","kategorie":"frucht"},
 

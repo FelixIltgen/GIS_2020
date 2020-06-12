@@ -1,85 +1,27 @@
 namespace Aufgabe7 {
 
-
-
-    let navigation: string[] = ["Natureller Sauerstoff", "Zum Inhalieren", "Mit Geschmack", "Mit Co<sub>2</sub>", "Alle"];
-
-    for (let index: number = 0; index < navigation.length; index++) {
-        let nav: HTMLAnchorElement = document.createElement("a");
-        nav.innerHTML = navigation[index];
-        document.getElementById("nav")?.appendChild(nav);
-        nav.setAttribute("Navigation", index + "");
-        nav.addEventListener("click", ausblenden);
+    async function laden(_url: RequestInfo): Promise<void> {
+        let rückgabe1: Response = await fetch(_url);
+        let rückgabe2: JSON = await rückgabe1.json();
+        artikel = JSON.parse(JSON.stringify(rückgabe2));
     }
 
-    function ausblenden(_event: Event): void {
-
-        switch ((<HTMLDivElement>_event.target).getAttribute("Navigation")) {
-            case "0":
-                (<HTMLElement>document.getElementById("ü2")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü3")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü4")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü1")).style.display = "block";
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "flex";
-
-                break;
-            case "1":
-                (<HTMLElement>document.getElementById("ü1")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü3")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü4")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü2")).style.display = "block";
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "flex";
-
-                break;
-            case "2":
-                (<HTMLElement>document.getElementById("ü1")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü2")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü4")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü3")).style.display = "block";
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "flex";
-
-                break;
-            case "3":
-                (<HTMLElement>document.getElementById("ü1")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü3")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü2")).style.display = "none";
-                (<HTMLElement>document.getElementById("ü4")).style.display = "block";
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none";
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "flex";
-                break;
-            case "4":
-
-                (<HTMLElement>document.getElementById("ü1")).style.display = "block";
-                (<HTMLElement>document.getElementById("ü3")).style.display = "block";
-                (<HTMLElement>document.getElementById("ü4")).style.display = "block";
-                (<HTMLElement>document.getElementById("ü2")).style.display = "block";
-                (<HTMLDivElement>document.getElementById("shop1")).style.display = "flex";
-                (<HTMLDivElement>document.getElementById("shop3")).style.display = "flex";
-                (<HTMLDivElement>document.getElementById("shop4")).style.display = "flex";
-                (<HTMLDivElement>document.getElementById("shop2")).style.display = "flex";
-                break;
-
-            default:
-                break;
-        }
-    }
-    
     verzögern();
     async function verzögern(): Promise<void> {
-        console.log("test");
         await laden("shopdaten.json");
-        
+        seiteladen();
+    }
+
+    function seiteladen(): void {
+        let navigation: string[] = ["Natureller Sauerstoff", "Zum Inhalieren", "Mit Geschmack", "Mit Co<sub>2</sub>", "Alle"];
+
+        for (let index: number = 0; index < navigation.length; index++) {
+            let nav: HTMLAnchorElement = document.createElement("a");
+            nav.innerHTML = navigation[index];
+            document.getElementById("nav")?.appendChild(nav);
+            nav.setAttribute("Navigation", index + "");
+            nav.addEventListener("click", ausblenden);
+        }
 
         for (let index: number = 0; index < artikel.length; index++) {
 
@@ -153,5 +95,68 @@ namespace Aufgabe7 {
         summe = summe + parseFloat(stringElement);
         console.log(summe + " Euro");
 
+    }
+
+    function ausblenden(_event: Event): void {
+
+        switch ((<HTMLDivElement>_event.target).getAttribute("Navigation")) {
+            case "0":
+                (<HTMLElement>document.getElementById("ü2")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü1")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "flex";
+
+                break;
+            case "1":
+                (<HTMLElement>document.getElementById("ü1")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü2")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "flex";
+
+                break;
+            case "2":
+                (<HTMLElement>document.getElementById("ü1")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü2")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "flex";
+
+                break;
+            case "3":
+                (<HTMLElement>document.getElementById("ü1")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü2")).style.display = "none";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "none";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "flex";
+                break;
+            case "4":
+
+                (<HTMLElement>document.getElementById("ü1")).style.display = "block";
+                (<HTMLElement>document.getElementById("ü3")).style.display = "block";
+                (<HTMLElement>document.getElementById("ü4")).style.display = "block";
+                (<HTMLElement>document.getElementById("ü2")).style.display = "block";
+                (<HTMLDivElement>document.getElementById("shop1")).style.display = "flex";
+                (<HTMLDivElement>document.getElementById("shop3")).style.display = "flex";
+                (<HTMLDivElement>document.getElementById("shop4")).style.display = "flex";
+                (<HTMLDivElement>document.getElementById("shop2")).style.display = "flex";
+                break;
+
+            default:
+                break;
+        }
     }
 }
