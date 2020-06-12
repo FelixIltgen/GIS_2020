@@ -1,6 +1,7 @@
 "use strict";
 var Aufgabe7;
 (function (Aufgabe7) {
+    localStorage.clear();
     async function laden(_url) {
         let rückgabe1 = await fetch(_url);
         let rückgabe2 = await rückgabe1.json();
@@ -61,6 +62,7 @@ var Aufgabe7;
             buy.setAttribute("data-preistag", Aufgabe7.artikel[index].preis + "");
             buy.addEventListener("click", clickEvent);
             buy.addEventListener("click", datenSpeichern);
+            buy.setAttribute("alt", index + "");
         }
     }
     //Warenkorb Counter
@@ -142,11 +144,12 @@ var Aufgabe7;
                 break;
         }
     }
+    let counter = 0;
     function datenSpeichern(_event) {
-        localStorage.setItem("kategorie", "test");
-        localStorage.setItem("kategorie1", "sssoooo");
-        console.log(localStorage.getItem("kategorie1"));
+        let speichern = _event.target.getAttribute("alt");
+        localStorage.setItem(counter + "", speichern);
+        console.log(speichern);
+        counter++;
     }
-    console.log(localStorage.getItem("kategorie"));
 })(Aufgabe7 || (Aufgabe7 = {}));
 //# sourceMappingURL=ladenSkript.js.map

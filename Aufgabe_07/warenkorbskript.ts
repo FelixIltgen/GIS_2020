@@ -1,7 +1,8 @@
-namespace Aufgabe7{
+namespace Aufgabe7 {
 
-    console.log(localStorage.getItem("kategorie")!);
-    console.log("testttt");
+    for (let index: number = 0; index < localStorage.length; index++) {
+        console.log(localStorage.getItem(index + "")!);
+    }
 
 
 

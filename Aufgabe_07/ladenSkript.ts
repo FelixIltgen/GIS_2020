@@ -1,4 +1,5 @@
 namespace Aufgabe7 {
+    localStorage.clear();
 
     async function laden(_url: RequestInfo): Promise<void> {
         let rückgabe1: Response = await fetch(_url);
@@ -69,6 +70,7 @@ namespace Aufgabe7 {
             buy.setAttribute("data-preistag", artikel[index].preis + "");
             buy.addEventListener("click", clickEvent);
             buy.addEventListener("click", datenSpeichern);
+            buy.setAttribute("alt", index + "");
         }
     }
 
@@ -160,14 +162,12 @@ namespace Aufgabe7 {
                 break;
         }
     }
-
+    let counter: number = 0;
     function datenSpeichern(_event: Event): void {
-            localStorage.setItem("kategorie", "test");
-            localStorage.setItem("kategorie1", "sssoooo");
-            console.log(localStorage.getItem("kategorie1")!);
-            
+        let speichern: string = (<HTMLDivElement>_event.target).getAttribute("alt")!;
+        localStorage.setItem( counter + "", speichern);
+        console.log(speichern);
+        counter++;
     }
 
-    console.log(localStorage.getItem("kategorie")!);
-    
 }
