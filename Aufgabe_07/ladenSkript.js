@@ -1,7 +1,6 @@
 "use strict";
 var Aufgabe7;
 (function (Aufgabe7) {
-    localStorage.clear();
     async function laden(_url) {
         let rückgabe1 = await fetch(_url);
         let rückgabe2 = await rückgabe1.json();
@@ -145,10 +144,15 @@ var Aufgabe7;
         }
     }
     let counter = 0;
+    if (localStorage.length == 0) {
+        counter = 0;
+    }
+    else if (localStorage.length >= 1) {
+        counter = localStorage.length;
+    }
     function datenSpeichern(_event) {
         let speichern = _event.target.getAttribute("alt");
         localStorage.setItem(counter + "", speichern);
-        console.log(speichern);
         counter++;
     }
 })(Aufgabe7 || (Aufgabe7 = {}));

@@ -75,16 +75,21 @@ h2{
     font-family: FreeMono, monospace;
     font-size: 50px;
 }
-.naturel, .inhalier, .geschmack, .co2, .warenkorb{
+.naturel, .inhalier, .geschmack, .co2{
+   
     display: flex;
-    justify-content: center;
-    margin-bottom: 90px;
+    justify-content: center;   
 }
+.warenkorb{
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
 
+}
 #inhalt1, #inhalt0, #inhalt2,
 #inhalt3, #inhalt4, #inhalt5,
 #inhalt6, #inhalt7, #inhalt8,
-#inhalt9, #inhalt10, #inhalt11{
+#inhalt9, #inhalt10, #inhalt11 {
     width: 250px;
     color: cornflowerblue;
     border: solid black 3px;
@@ -95,6 +100,7 @@ h2{
     transition: 0.3s;
     height: 500px;
     font-family: FreeMono, monospace;
+    margin-top: 20px;
 }
 #inhalt1 img, #inhalt0 img, #inhalt2 img,
 #inhalt3 img, #inhalt4 img, #inhalt5 img,
@@ -119,7 +125,7 @@ h2{
 #inhalt1 a, #inhalt0 a, #inhalt2 a,
 #inhalt3 a, #inhalt4 a, #inhalt5 a,
 #inhalt6 a, #inhalt7 a, #inhalt8 a,
-#inhalt9 a, #inhalt10 a, #inhalt11 a{
+#inhalt9 a, #inhalt10 a, #inhalt11 a, #allesButton{
     text-decoration: none;
     color:rgba(248, 141, 0, 0.815);
     font-size: 30px;
@@ -130,12 +136,29 @@ h2{
 #inhalt0 a:hover, #inhalt1 a:hover, #inhalt2 a:hover,
 #inhalt3 a:hover, #inhalt4 a:hover, #inhalt5 a:hover,
 #inhalt6 a:hover, #inhalt7 a:hover, #inhalt8 a:hover,
-#inhalt9 a:hover, #inhalt10 a:hover, #inhalt11 a:hover{
+#inhalt9 a:hover, #inhalt10 a:hover, #inhalt11 a:hover, #allesButton:hover{
     color: rgb(0, 72, 155);
     border: solid rgb(0, 72, 155) 3px;
     border-radius: 5px;
     padding: 5px;
 }
+#secHeader{
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+#wertAnzeige{
+    font-family: FreeMono, monospace ;
+    color: cornflowerblue ;
+    font-size: large;
+    margin-top: 35px;
+}
+
+
+
 
 @media (max-width: 1024px){
     .naturel, .inhalier, .geschmack, .co2{

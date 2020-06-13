@@ -1,5 +1,5 @@
 namespace Aufgabe7 {
-    localStorage.clear();
+ 
 
     async function laden(_url: RequestInfo): Promise<void> {
         let rückgabe1: Response = await fetch(_url);
@@ -163,10 +163,15 @@ namespace Aufgabe7 {
         }
     }
     let counter: number = 0;
+    if (localStorage.length == 0) {
+        counter = 0;
+    } else if (localStorage.length >= 1) {
+        counter = localStorage.length;
+    }
+    
     function datenSpeichern(_event: Event): void {
         let speichern: string = (<HTMLDivElement>_event.target).getAttribute("alt")!;
         localStorage.setItem( counter + "", speichern);
-        console.log(speichern);
         counter++;
     }
 
