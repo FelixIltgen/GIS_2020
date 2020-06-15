@@ -1,0 +1,15 @@
+[{"name": "Von den Alpen", "img": "434039.png", "preis": 19.99, "beschreibung": "Direkt importiert aus der Schweiz.", "kategorie": "natur"},
+{"name": "Aus Bolivien", "img": "gas2.png", "preis": 25.99, "beschreibung": "Mit leichtem Gras geruch.", "kategorie": "natur"},
+{"name": "Vom Mount Everest", "img": "gas3.png", "preis": 44.99, "beschreibung": "Von ganz oben, sauberer gehts nicht.", "kategorie":"natur"},
+
+{"name": "10 Liter", "img": "inhalator3.png", "preis": 5.99, "beschreibung": "Um gesund durch <br> den Tag zu kommen.", "kategorie": "inhalier"},
+{"name": "30 Liter", "img": "inhalator2.png", "preis": 15.99, "beschreibung": "Für den längeren Nutzen und für zwischen durch.", "kategorie": "inhalier"},
+{"name": "60 Liter", "img": "inhalator1.png","preis": 30.99,"beschreibung":"Damit überlebt ihr zwei Tage im brennenden Haus","kategorie":"inhalier"},
+
+{"name":"Banane","img":"banane.png","preis":15.99,"beschreibung":"Vollmundig im Geschmack <br> 100% natürlich.","kategorie":"frucht"},
+{"name":"Kirsche","img":"Kirsche.png","preis":17.99,"beschreibung":"Fast wie Mon Chéri <br> 100% natürlich","kategorie":"frucht"},
+{"name":"Kiwi","img":"kiwi.png","preis":19.99,"beschreibung":"Schmeckt wie frisch gepflückt 100 % natürlich.","kategorie":"frucht"},
+
+{"name":"Mit 20%","img":"gas1.png","preis":20.99,"beschreibung":"Mit ca. 20% Co<sub>2</sub>, für den gewissen Kick nach der Arbeit.","kategorie":"co2"},
+{"name":"Mit 50%","img":"gas2.png","preis":35.99,"beschreibung":"Mit ca. 50% Co<sub>2</sub>, nichts für schwache Nerven.","kategorie":"co2"},
+{"name":"Mit 80%","img":"gas3.png","preis":55.99,"beschreibung":"Mit ca. 80% Co<sub>2</sub>, für richtige Feuerwehrmänner.","kategorie":"co2"}]

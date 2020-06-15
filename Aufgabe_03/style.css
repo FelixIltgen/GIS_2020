@@ -36,7 +36,11 @@ nav a{
     text-align: center; 
 }
 #kopf h1{
+<<<<<<< HEAD
     font-size: 170px;
+=======
+    font-size: 150px;
+>>>>>>> master
     padding-top: 40%;
     font-family: Noto Sans, sans-serif;
     text-align: center;
