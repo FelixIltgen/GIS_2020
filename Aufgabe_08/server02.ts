@@ -1,15 +1,11 @@
 namespace Aufgabe8 {
 
-
     document.getElementById("derKnopf")?.addEventListener("click", buttonklick);
 
-   
-
     async function verbindung(_url: RequestInfo): Promise<void> {
-        console.log("dsf");
-        let test: Response = await fetch(_url, { method: "get" });
-        let test2: String = await test.text();
-        console.log(test2);
+        let rückgabe: Response = await fetch(_url, { method: "get" });
+        let rückgabe2: String = await rückgabe.text();
+        console.log(rückgabe2);
 
     }
 

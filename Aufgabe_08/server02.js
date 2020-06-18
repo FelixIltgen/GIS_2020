@@ -3,10 +3,9 @@ var Aufgabe8;
 (function (Aufgabe8) {
     document.getElementById("derKnopf")?.addEventListener("click", buttonklick);
     async function verbindung(_url) {
-        console.log("dsf");
-        let test = await fetch(_url, { method: "get" });
-        let test2 = await test.text();
-        console.log(test2);
+        let rückgabe = await fetch(_url, { method: "get" });
+        let rückgabe2 = await rückgabe.text();
+        console.log(rückgabe2);
     }
     function buttonklick() {
         let formData = new FormData(document.forms[0]);
