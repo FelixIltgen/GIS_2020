@@ -1,0 +1,21 @@
+{
+  "name": "gis_2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe_08/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelixIltgen/GIS_2020.git"
+  },
+  "author": "felixiltgen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelixIltgen/GIS_2020/issues"
+  },
+  "homepage": "https://github.com/FelixIltgen/GIS_2020#readme"
+}
