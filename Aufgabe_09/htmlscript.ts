@@ -1,36 +1,35 @@
-namespace Aufgabe8 {
+namespace Aufgabe9 {
+    document.getElementById("hButton")?.addEventListener("click", htmlButton);
+    document.getElementById("jButton")?.addEventListener("click", jsonButton);
 
-    document.getElementById("HtmlKnopf")?.addEventListener("click", ausgabeHtml);
-    document.getElementById("JasonKnopf")?.addEventListener("click", ausgabeJason);
+    function senden(): string {
 
-    function send(): string {
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://gis2020felix.herokuapp.com/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
-        return (url);
+        return url;
+    }
+
+    async function jsonButton(): Promise<void> {
+        AusgabeInConsole(await teiler(senden()));
+    }
+
+    async function htmlButton(): Promise<void> {
+        AusgabeInHtml( await teiler(senden()));
     }
 
 
-    async function ausgabeJason(): Promise<void> {
-        conAusgabe(await teiler(send()));
-    }
+    function AusgabeInHtml(_arraysplit: string[]): void {
 
-    async function ausgabeHtml(): Promise<void> {
-        ausHtml(await teiler(send()));
-    }
-
-    function ausHtml(_arrayteiler: string[]): void {
-
-        (<HTMLElement>document.getElementById("Inhalt")).innerHTML = _arrayteiler[0];
+        (<HTMLElement>document.getElementById("inhalt")).innerHTML  = _arraysplit[0];
 
     }
 
-    function conAusgabe(_arrayteiler: string[]): void {
-        let ausgabe: string = JSON.parse(_arrayteiler[1]);
+    function AusgabeInConsole(_arraysplit: string[]): void {
+        let ausgabe: string = JSON.parse(_arraysplit[1]);
         console.log(ausgabe);
     }
-
 
     async function teiler(_url: RequestInfo): Promise<string[]> {
         let response: Response = await fetch(_url);
@@ -38,5 +37,5 @@ namespace Aufgabe8 {
         let arrayrequest: string[] = response2.split("$$$");
         return arrayrequest;
     }
-
 }
+https://gis2020felix.herokuapp.com/

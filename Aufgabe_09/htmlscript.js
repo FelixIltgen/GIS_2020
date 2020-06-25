@@ -1,26 +1,26 @@
 "use strict";
-var Aufgabe8;
-(function (Aufgabe8) {
-    document.getElementById("HtmlKnopf")?.addEventListener("click", ausgabeHtml);
-    document.getElementById("JasonKnopf")?.addEventListener("click", ausgabeJason);
-    function send() {
+var Aufgabe9;
+(function (Aufgabe9) {
+    document.getElementById("hButton")?.addEventListener("click", htmlButton);
+    document.getElementById("jButton")?.addEventListener("click", jsonButton);
+    function senden() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gis2020felix.herokuapp.com/";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
-        return (url);
+        return url;
     }
-    async function ausgabeJason() {
-        conAusgabe(await teiler(send()));
+    async function jsonButton() {
+        AusgabeInConsole(await teiler(senden()));
     }
-    async function ausgabeHtml() {
-        ausHtml(await teiler(send()));
+    async function htmlButton() {
+        AusgabeInHtml(await teiler(senden()));
     }
-    function ausHtml(_arrayteiler) {
-        document.getElementById("Inhalt").innerHTML = _arrayteiler[0];
+    function AusgabeInHtml(_arraysplit) {
+        document.getElementById("inhalt").innerHTML = _arraysplit[0];
     }
-    function conAusgabe(_arrayteiler) {
-        let ausgabe = JSON.parse(_arrayteiler[1]);
+    function AusgabeInConsole(_arraysplit) {
+        let ausgabe = JSON.parse(_arraysplit[1]);
         console.log(ausgabe);
     }
     async function teiler(_url) {
@@ -29,5 +29,6 @@ var Aufgabe8;
         let arrayrequest = response2.split("$$$");
         return arrayrequest;
     }
-})(Aufgabe8 || (Aufgabe8 = {}));
+})(Aufgabe9 || (Aufgabe9 = {}));
+https: ; //gis2020felix.herokuapp.com/
 //# sourceMappingURL=htmlscript.js.map
