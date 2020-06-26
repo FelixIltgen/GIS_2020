@@ -5,7 +5,7 @@ var Aufgabe9;
     document.getElementById("jButton")?.addEventListener("click", jsonButton);
     function senden() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://davidgis2020.herokuapp.com/";
+        let url = "https://gis2020felix.herokuapp.com/";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
         return url;
@@ -26,10 +26,8 @@ var Aufgabe9;
     async function teiler(_url) {
         let rückgabe = await fetch(_url);
         let rückgabe2 = await rückgabe.text();
-        let arrayrequest = rückgabe2.split("&&");
+        let arrayrequest = rückgabe2.split("$$$");
         return arrayrequest;
     }
 })(Aufgabe9 || (Aufgabe9 = {}));
-//https://gis2020felix.herokuapp.com/
-//https://davidgis2020.herokuapp.com/
 //# sourceMappingURL=htmlscript.js.map

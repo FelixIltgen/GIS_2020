@@ -5,7 +5,7 @@ namespace Aufgabe9 {
     function senden(): string {
 
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://davidgis2020.herokuapp.com/";
+        let url: string = "https://gis2020felix.herokuapp.com/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
         return url;
@@ -31,9 +31,7 @@ namespace Aufgabe9 {
     async function teiler(_url: RequestInfo): Promise<string[]> {
         let rückgabe: Response = await fetch(_url);
         let rückgabe2: string = await rückgabe.text();
-        let arrayrequest: string[] = rückgabe2.split("&&");
+        let arrayrequest: string[] = rückgabe2.split("$$$");
         return arrayrequest;
     }
 }
-//https://gis2020felix.herokuapp.com/
-//https://davidgis2020.herokuapp.com/
