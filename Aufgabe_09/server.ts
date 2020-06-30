@@ -30,10 +30,10 @@ export namespace Aufgabe9 {
             if (url.pathname == "/hbutton") {
 
                 for (let key in url.query) {
-                    //als HTML
                     _response.write(key + ":" + url.query[key] + " <br/>");
                 }
             } else if (url.pathname == "/jbutton") {
+                //Jason wird in ein String umgewandelt
                 let urlJson: string = JSON.stringify(url.query);
                 _response.write(urlJson);
             }

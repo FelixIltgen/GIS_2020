@@ -9,23 +9,27 @@ namespace Aufgabe9 {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
 
+        //Wenn Button (Als HTML) gedrückt wird
         if ((<HTMLButtonElement>_event.target).getAttribute("id") == "hbutton") {
             htmlausgabe(url);
         }
+        // Wenn Button (Als JSON) gedrückt wird
         else if ((<HTMLButtonElement>_event.target).getAttribute("id") == "jbutton") {
             consolausgabe(url);
         }
     }
-    async function htmlausgabe(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(_url);
-        let response2: string = await response.text();
-        (<HTMLElement>document.getElementById("anzeige")).innerHTML  = response2;
 
-    }
     async function consolausgabe(_url: RequestInfo): Promise<void> {
         let rückgabe: Response = await fetch(_url);
         let rückgabe2: string = await rückgabe.text();
         let inhalt: string = JSON.parse(rückgabe2);
         console.log(inhalt);
     }
+    async function htmlausgabe(_url: RequestInfo): Promise<void> {
+        let rückgabe: Response = await fetch(_url);
+        let rückgabe2: string = await rückgabe.text();
+        (<HTMLElement>document.getElementById("inhalt")).innerHTML  = rückgabe2;
+
+    }
+   
 }
