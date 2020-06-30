@@ -28,7 +28,7 @@ export namespace Aufgabe9 {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
 
             if (url.pathname == "/hbutton") {
-
+                
                 for (let key in url.query) {
                     _response.write(key + ":" + url.query[key] + " <br/>");
                 }

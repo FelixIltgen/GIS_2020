@@ -18,14 +18,14 @@ namespace Aufgabe9 {
             consolausgabe(url);
         }
     }
-    //Inhalt wird aus Url in Console geschrieben 
+    
     async function consolausgabe(_url: RequestInfo): Promise<void> {
         let rückgabe: Response = await fetch(_url);
         let rückgabe2: string = await rückgabe.text();
         let inhalt: string = JSON.parse(rückgabe2);
         console.log(inhalt);
     }
-    // Ihnalt wird aus Url in HTML geschrieben
+    
     async function htmlausgabe(_url: RequestInfo): Promise<void> {
         let rückgabe: Response = await fetch(_url);
         let rückgabe2: string = await rückgabe.text();
