@@ -1,37 +1,31 @@
 namespace Aufgabe9 {
-    document.getElementById("hButton")?.addEventListener("click", htmlButton);
-    document.getElementById("jButton")?.addEventListener("click", jsonButton);
+    document.getElementById("hButton")?.addEventListener("click", ausgabe);
+    document.getElementById("jButton")?.addEventListener("click", ausgabe);
 
-    function senden(): string {
+    function ausgabe(_event: Event): void {
 
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gis2020felix.herokuapp.com/";
+        let url: string = "https://gis2020felix.herokuapp.com/" + (<HTMLButtonElement>_event.target).getAttribute("id");
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
-        return url;
-    }
 
-    async function jsonButton(): Promise<void> {
-        AusgabeInConsole(await teiler(senden()));
+        if ((<HTMLButtonElement>_event.target).getAttribute("id") == "hbutton") {
+            htmlausgabe(url);
+        }
+        else if ((<HTMLButtonElement>_event.target).getAttribute("id") == "jbutton") {
+            consolausgabe(url);
+        }
     }
-    function AusgabeInConsole(arrayteiler: string[]): void {
-        let ausgabe: string = JSON.parse(arrayteiler[1]);
-        console.log(ausgabe);
-    }
+    async function htmlausgabe(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        let response2: string = await response.text();
+        (<HTMLElement>document.getElementById("anzeige")).innerHTML  = response2;
 
-
-    async function htmlButton(): Promise<void> {
-        AusgabeInHtml( await teiler(senden()));
     }
-    function AusgabeInHtml(arrayteiler: string[]): void {
-        (<HTMLElement>document.getElementById("inhalt")).innerHTML  = arrayteiler[0];
-    }
-
-   
-    async function teiler(_url: RequestInfo): Promise<string[]> {
+    async function consolausgabe(_url: RequestInfo): Promise<void> {
         let rückgabe: Response = await fetch(_url);
         let rückgabe2: string = await rückgabe.text();
-        let arrayrequest: string[] = rückgabe2.split("$$$");
-        return arrayrequest;
+        let inhalt: string = JSON.parse(rückgabe2);
+        console.log(inhalt);
     }
 }
