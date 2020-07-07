@@ -12,6 +12,7 @@ var Aufgabe10;
     if (!port)
         port = 8100;
     let databaseURL = "mongodb+srv://FelixIltgen:Test123@felixiltgen.fpfuw.mongodb.net/Aufgabe11?retryWrites=true&w=majority";
+    //let databaseURL: string = "mongodb://localhost:27017";
     startserver(port);
     connectToDatabase(databaseURL);
     function startserver(_port) {
@@ -42,14 +43,13 @@ var Aufgabe10;
                 if (error)
                     throw error;
                 if (path == "/anzeigen") {
-                    console.log("sdfsdf");
                     for (let i = 0; i < info.length; i++) {
                         jsonString += JSON.stringify(info[i]);
                         jsonString += "<br>";
                     }
                 }
-                if (path == "/hinzufügen") {
-                    console.log("spast");
+                if (path == "/hinzufuegen") {
+                    console.log("sdfds");
                     orders.insertOne(url.query);
                 }
                 _response.write(jsonString);

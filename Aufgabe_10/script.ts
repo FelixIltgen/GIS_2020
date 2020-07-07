@@ -7,7 +7,8 @@ namespace Aufgabe10 {
         
         let formData: FormData = new FormData(document.forms[0]);
         let url: string = "https://gis2020felix.herokuapp.com";
-        url += "/hinzufügen";
+        //let url: string = "http://localhost:8100";
+        url += "/hinzufuegen";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
@@ -19,6 +20,7 @@ namespace Aufgabe10 {
     async function anzeigen(): Promise<void> {
         
         let url: string = "https://gis2020felix.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url += "/anzeigen";
         let response: Response = await fetch(url, {method: "get"});
         let response2: string = await response.text(); 

@@ -14,6 +14,7 @@ export namespace Aufgabe10 {
         port = 8100;
 
     let databaseURL: string = "mongodb+srv://FelixIltgen:Test123@felixiltgen.fpfuw.mongodb.net/Aufgabe11?retryWrites=true&w=majority";
+    //let databaseURL: string = "mongodb://localhost:27017";
 
     startserver(port);
     connectToDatabase(databaseURL);
@@ -56,15 +57,17 @@ export namespace Aufgabe10 {
 
 
                 if (path == "/anzeigen") {
-                    console.log("sdfsdf");
+                    
                     for (let i: number = 0; i < info.length; i++) {
+                        
                         jsonString += JSON.stringify(info[i]);
                         jsonString += "<br>";
+                        
                     }
                 }
 
-                if (path == "/hinzufügen") {
-                    console.log("spast");
+                if (path == "/hinzufuegen") {
+                    console.log("sdfds");
                     orders.insertOne(url.query);
                 }
 
