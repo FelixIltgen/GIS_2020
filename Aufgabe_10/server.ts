@@ -49,15 +49,15 @@ export namespace Aufgabe10 {
             let path: String | null = url.pathname;
             let jsonString: String = "";
             // tslint:disable-next-line: typedef
-            orders.find().toArray(function (error: Mongo.MongoError, results: String[]) {
+            orders.find().toArray(function (error: Mongo.MongoError, info: String[]) {
 
                 if (error)
                     throw error;
 
 
                 if (path == "/anzeigen") {
-                    for (let i: number = 0; i < results.length; i++) {
-                        jsonString += JSON.stringify(results[i]);
+                    for (let i: number = 0; i < info.length; i++) {
+                        jsonString += JSON.stringify(info[i]);
                         jsonString += "<br>";
                     }
                 }

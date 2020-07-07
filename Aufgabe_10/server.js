@@ -38,12 +38,12 @@ var Aufgabe10;
             let path = url.pathname;
             let jsonString = "";
             // tslint:disable-next-line: typedef
-            orders.find().toArray(function (error, results) {
+            orders.find().toArray(function (error, info) {
                 if (error)
                     throw error;
                 if (path == "/anzeigen") {
-                    for (let i = 0; i < results.length; i++) {
-                        jsonString += JSON.stringify(results[i]);
+                    for (let i = 0; i < info.length; i++) {
+                        jsonString += JSON.stringify(info[i]);
                         jsonString += "<br>";
                     }
                 }
