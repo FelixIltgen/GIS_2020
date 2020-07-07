@@ -4,6 +4,7 @@ var Aufgabe10;
     document.getElementById("senden")?.addEventListener("click", hinzufügen);
     document.getElementById("antwort")?.addEventListener("click", anzeigen);
     async function hinzufügen() {
+        console.log("sdfsdf");
         let formData = new FormData(document.forms[0]);
         let url = "https://gis2020felix.herokuapp.com";
         url += "/hinzufügen";
@@ -14,6 +15,7 @@ var Aufgabe10;
         await fetch(url);
     }
     async function anzeigen() {
+        console.log("sdfsdf");
         let url = "https://gis2020felix.herokuapp.com";
         url += "/anzeigen";
         let response = await fetch(url, { method: "get" });
