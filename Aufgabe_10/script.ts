@@ -11,7 +11,7 @@ namespace Aufgabe10 {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
-        console.log("sdfsdf");
+        
         (<HTMLFormElement>document.getElementById("data"))?.reset();
         await fetch(url);
     }
@@ -23,7 +23,7 @@ namespace Aufgabe10 {
         let response: Response = await fetch(url, {method: "get"});
         let response2: string = await response.text(); 
         (<HTMLElement>document.getElementById("inhalt")).innerHTML = response2;
-        console.log("sdfsdf");
+        
     }
 
 

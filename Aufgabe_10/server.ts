@@ -56,6 +56,7 @@ export namespace Aufgabe10 {
 
 
                 if (path == "/anzeigen") {
+                    console.log("sdfsdf");
                     for (let i: number = 0; i < info.length; i++) {
                         jsonString += JSON.stringify(info[i]);
                         jsonString += "<br>";
@@ -63,6 +64,7 @@ export namespace Aufgabe10 {
                 }
 
                 if (path == "/hinzufügen") {
+                    console.log("spast");
                     orders.insertOne(url.query);
                 }
 

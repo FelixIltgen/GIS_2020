@@ -42,12 +42,14 @@ var Aufgabe10;
                 if (error)
                     throw error;
                 if (path == "/anzeigen") {
+                    console.log("sdfsdf");
                     for (let i = 0; i < info.length; i++) {
                         jsonString += JSON.stringify(info[i]);
                         jsonString += "<br>";
                     }
                 }
                 if (path == "/hinzufügen") {
+                    console.log("spast");
                     orders.insertOne(url.query);
                 }
                 _response.write(jsonString);

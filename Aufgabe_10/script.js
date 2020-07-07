@@ -10,7 +10,6 @@ var Aufgabe10;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
-        console.log("sdfsdf");
         document.getElementById("data")?.reset();
         await fetch(url);
     }
@@ -20,7 +19,6 @@ var Aufgabe10;
         let response = await fetch(url, { method: "get" });
         let response2 = await response.text();
         document.getElementById("inhalt").innerHTML = response2;
-        console.log("sdfsdf");
     }
 })(Aufgabe10 || (Aufgabe10 = {}));
 //# sourceMappingURL=script.js.map
