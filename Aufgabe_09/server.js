@@ -21,12 +21,15 @@ var Aufgabe9;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            for (let key in url.query) {
-                _response.write(key + ":" + url.query[key] + " <br/>");
+            if (url.pathname == "/hbutton") {
+                for (let key in url.query) {
+                    _response.write(key + ":" + url.query[key] + " <br/>");
+                }
             }
-            _response.write("$$$");
-            let urlJson = JSON.stringify(url.query);
-            _response.write(urlJson);
+            else if (url.pathname == "/jbutton") {
+                let urlJson = JSON.stringify(url.query);
+                _response.write(urlJson);
+            }
         }
         _response.end();
     }

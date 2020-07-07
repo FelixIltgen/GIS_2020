@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@types/node": "^14.0.14"
+    "@types/mongodb": "^3.5.25",
+    "@types/node": "^14.0.14",
+    "mongodb": "^3.5.9"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe_09/server.js"
+    "start": "node Aufgabe_10/server.js"
   },
   "repository": {
     "type": "git",
