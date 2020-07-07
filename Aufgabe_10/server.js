@@ -11,7 +11,7 @@ var Aufgabe10;
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
-    let databaseURL = "mongodb+srv://FelixIltgen:Test123@felixiltgen.fpfuw.mongodb.net/Test?retryWrites=true&w=majority";
+    let databaseURL = "mongodb+srv://FelixIltgen:Test123@felixiltgen.fpfuw.mongodb.net/Aufgabe_10?retryWrites=true&w=majority";
     startserver(port);
     connectToDatabase(databaseURL);
     function startserver(_port) {
