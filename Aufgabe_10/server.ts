@@ -13,7 +13,7 @@ export namespace Aufgabe10 {
     if (!port)
         port = 8100;
 
-    let databaseURL: string = "mongodb+srv://FelixIltgen:Test123@felixiltgen.fpfuw.mongodb.net/Aufgabe_10?retryWrites=true&w=majority";
+    let databaseURL: string = "mongodb+srv://FelixIltgen:Test123@felixiltgen.fpfuw.mongodb.net/Aufgabe11?retryWrites=true&w=majority";
 
     startserver(port);
     connectToDatabase(databaseURL);
@@ -31,7 +31,7 @@ export namespace Aufgabe10 {
         let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        orders = mongoClient.db("Name").collection("Collection");
+        orders = mongoClient.db("Aufgabe11").collection("User");
         console.log("Database connection: ", orders != undefined);
     }
 

@@ -1,11 +1,11 @@
 "use strict";
 var Aufgabe10;
 (function (Aufgabe10) {
-    document.getElementById("senden")?.addEventListener("click", versenden);
+    document.getElementById("senden")?.addEventListener("click", hinzufügen);
     document.getElementById("antwort")?.addEventListener("click", anzeigen);
-    async function versenden() {
+    async function hinzufügen() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://gis2020felix.herokuapp.com/";
+        let url = "https://gis2020felix.herokuapp.com";
         url += "/hinzufügen";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
@@ -14,9 +14,9 @@ var Aufgabe10;
         await fetch(url);
     }
     async function anzeigen() {
-        let url = "https://gis2020felix.herokuapp.com/";
+        let url = "https://gis2020felix.herokuapp.com";
         url += "/anzeigen";
-        let response = await fetch(url);
+        let response = await fetch(url, { method: "get" });
         let response2 = await response.text();
         document.getElementById("inhalt").innerHTML = response2;
     }
