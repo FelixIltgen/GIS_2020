@@ -48,7 +48,7 @@ export namespace Aufgabe10 {
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let path: String | null = url.pathname;
-            let jsonString: String = "";
+            let jString: String = "";
             // tslint:disable-next-line: typedef
             orders.find().toArray(function (error: Mongo.MongoError, info: String[]) {
 
@@ -60,18 +60,17 @@ export namespace Aufgabe10 {
                     
                     for (let i: number = 0; i < info.length; i++) {
                         
-                        jsonString += JSON.stringify(info[i]);
-                        jsonString += "<br>";
+                        jString += JSON.stringify(info[i]);
+                        jString += "<br>";
                         
                     }
                 }
 
                 if (path == "/hinzufuegen") {
-                    console.log("sdfds");
                     orders.insertOne(url.query);
                 }
 
-                _response.write(jsonString);
+                _response.write(jString);
                 _response.end();
 
             });

@@ -22,9 +22,9 @@ namespace Aufgabe10 {
         let url: string = "https://gis2020felix.herokuapp.com";
         //let url: string = "http://localhost:8100";
         url += "/anzeigen";
-        let response: Response = await fetch(url, {method: "get"});
-        let response2: string = await response.text(); 
-        (<HTMLElement>document.getElementById("inhalt")).innerHTML = response2;
+        let rückgabe1: Response = await fetch(url);
+        let rückgabe2: string = await rückgabe1.text(); 
+        (<HTMLElement>document.getElementById("inhalt")).innerHTML = rückgabe2;
         
     }
 
