@@ -21,8 +21,8 @@ namespace Abgabe {
     async function inDB(): Promise<void> {
         
         let formData: FormData = new FormData(document.forms[1]);
-        //let url: string = "https://gis2020felix.herokuapp.com";
-        let url: string = "http://localhost:8100";
+        let url: string = "https://gis2020felix.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url += "/neuernutzer";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
@@ -38,8 +38,8 @@ namespace Abgabe {
     async function ausDB(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
-        //let url: string = "https://gis2020felix.herokuapp.com";
-        let url: string = "http://localhost:8100";
+        let url: string = "https://gis2020felix.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url += "/nutzeranmelden";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);

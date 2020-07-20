@@ -16,8 +16,8 @@ var Abgabe;
     document.getElementById("registbutton")?.addEventListener("click", inDB);
     async function inDB() {
         let formData = new FormData(document.forms[1]);
-        //let url: string = "https://gis2020felix.herokuapp.com";
-        let url = "http://localhost:8100";
+        let url = "https://gis2020felix.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url += "/neuernutzer";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
@@ -30,8 +30,8 @@ var Abgabe;
     document.getElementById("anmeldbutton")?.addEventListener("click", ausDB);
     async function ausDB() {
         let formData = new FormData(document.forms[0]);
-        //let url: string = "https://gis2020felix.herokuapp.com";
-        let url = "http://localhost:8100";
+        let url = "https://gis2020felix.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url += "/nutzeranmelden";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
