@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe_10/server.js remote"
+    "start": "node GIS-Abgabe/server.js remote"
   },
   "repository": {
     "type": "git",
