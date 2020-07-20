@@ -13,7 +13,7 @@ export namespace Aufgabe10 {
     if (!port)
         port = 8100;
 
-    let databaseURL: string = "mongodb+srv://FelixIltgen:Test123@felixiltgen.fpfuw.mongodb.net/Aufgabe11?retryWrites=true&w=majority";
+    let databaseURL: string = "mongodb+srv://FelixIltgen:Test123@felixiltgen.fpfuw.mongodb.net/Abgabe?retryWrites=true&w=majority";
     //let databaseURL: string = "mongodb://localhost:27017";
 
     startserver(port);
