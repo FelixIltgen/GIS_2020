@@ -28,7 +28,7 @@ namespace Abgabe {
                 document.getElementById("chat")?.appendChild(newDiv);
             }
         }
-
+                
 
     }
 
