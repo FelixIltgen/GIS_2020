@@ -79,9 +79,7 @@ export namespace Aufgabe10 {
                 let dbInhalt: string[] = await user.find().toArray(); //db Inhalt laden
                 let dbInhalt2: string = JSON.stringify(dbInhalt); // In String umwandeln
                 let rückgabeZuChat2: String = "";
-                console.log(pw);
-                console.log(nname);
-                console.log(dbInhalt2);
+             
                 for (let index: number = 0; index < dbInhalt.length; index++) {
 
                     if (dbInhalt2.includes(pw)/*&&  dbInhalt.includes(nname)*/ ) {
@@ -99,7 +97,7 @@ export namespace Aufgabe10 {
             }
 
             if (url.pathname == "/neueNachricht") {
-                console.log(url.query);
+        
                 let queryStringify: string = JSON.stringify(url.query);
                 let queryArray: string[] = queryStringify.split("\"");
                 let neueNachricht: Nachrichten = { user: queryArray[1], nachricht: queryArray[2], chat: queryArray[3] };

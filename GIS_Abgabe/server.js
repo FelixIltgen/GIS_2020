@@ -60,9 +60,6 @@ var Aufgabe10;
                 let dbInhalt = await user.find().toArray(); //db Inhalt laden
                 let dbInhalt2 = JSON.stringify(dbInhalt); // In String umwandeln
                 let rückgabeZuChat2 = "";
-                console.log(pw);
-                console.log(nname);
-                console.log(dbInhalt2);
                 for (let index = 0; index < dbInhalt.length; index++) {
                     if (dbInhalt2.includes(pw) /*&&  dbInhalt.includes(nname)*/) {
                         rückgabeZuChat = "&&true&&";
@@ -77,7 +74,6 @@ var Aufgabe10;
                 _response.write(rückgabeZuChat2);
             }
             if (url.pathname == "/neueNachricht") {
-                console.log(url.query);
                 let queryStringify = JSON.stringify(url.query);
                 let queryArray = queryStringify.split("\"");
                 let neueNachricht = { user: queryArray[1], nachricht: queryArray[2], chat: queryArray[3] };

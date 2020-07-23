@@ -5,6 +5,9 @@ namespace Abgabe {
         nachricht: string;
         chat: number;
     }
+    while (window.open) {
+        location.reload();
+    }
 
     let username: string = localStorage.getItem("Username")!;
     let chatnummer: number;
@@ -64,7 +67,7 @@ namespace Abgabe {
 
         divLöschen();
         chatgenerieren();
-
+        
 
     }
     function divLöschen(): void {
