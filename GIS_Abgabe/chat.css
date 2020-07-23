@@ -1,79 +1,93 @@
 body{
-    background-image: url("hintergrund.png");
+    background-color: rgb(52, 51, 57);
+    font-family: FreeMono, monospace;
+    color: white;
 }
 #test{
     max-width: 1600px;
-    margin: 0px auto;
+    margin: 0px auto ;
     margin-top: 10px;
-    padding: 20px;
-   
+    padding: 10px;
+
 }
 #nav{
     width: 100%;
     height: 70px;
-    background-color: chocolate;
+}
+#profilll{
+    float: left;
+    width: 70%;
+    height: 70px;
+    border: solid 2px rgb(247, 51, 51);
     text-align: center;
 }
-#profil{
-    float: left;
-    height: 70px;
-    width: 20%;
-    background-color: brown;
-}
-
 #abmelden{
+    border: solid 2px rgb(247, 51, 51);
     float: right;
-    height: 70px;
     width: 200px;
-    background-color: brown;
+    height: 70px;
+    text-align: center; 
+    transition: 0.5s; 
+}
+#abmelden:hover{
+    background-color: rgb(247, 51, 51);
 }
 #chat{
     width: 75%;
-    height: 610px;
-    background-color: chartreuse;
+    height: 535px;
     float: right;
     margin-top: 20px;
     margin-bottom: 10px;
+    border: solid rgb(85, 90, 101)  3px;
+    border-radius: 20px;
     overflow-y  : auto;
 }.nachrichten{
     width: 95%;
     padding: 5px;
-    background-color: burlywood;
     margin: 10px auto 10px auto;
-    
+    border: black solid 2px;
+    border-radius: 10px;
+   
 }
 #chatliste{
-    margin-top: 20px;
     width: 20%;
-    height: 610px;
-    background-color: chocolate;
+    margin-top: 20px;
+    height: 521px;
 }
 .chatroom{
+    padding: 25%;
+    border: solid 3px rgb(247, 51, 51) ;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: 0.5s; 
+    font-size: 40px;
+}
+.chatroom:hover{
+    background-color: rgb(247, 51, 51);
+}
+.chatroom:hover{
+    background-color: rgb(247, 51, 51);
+}
+#nachrichtFeld{
+    width: 95%;
+    margin: 40px auto 10px auto;
+}
+input{
     width: 100%;
-    height: 90px;
-    background-color: burlywood;
-    margin-bottom: 20px;
+    height: 50px;
+    background-color: rgb(185, 182, 201);
+    border: solid 1px rgb(241, 178, 61);
 }
-#schreiben{
-    width: 100%;
-    height: 60px;
-    background-color: crimson;
-    float: right;
-    margin-top: 20px;
-    clear: both;
+#senden{
+    padding-left: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: solid 2px rgb(2, 160, 25);
+    transition: 0.5s;
 }
-#schreiben input{
-    height: 60px;
-    width: 80%;
-    
-    text-decoration: none;
-}
-#schreiben a{
-    float: right;
-    height: 60px;
-    width: 19%;
-    text-align: center;
-    background-color: cadetblue;
+#senden:hover{
+    background-color: rgb(2, 160, 25);
 }
 
 @media (max-width: 900px){
@@ -91,11 +105,8 @@ body{
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        height: auto;
-        
+        height: auto;  
     }
-
-
 }
 
 

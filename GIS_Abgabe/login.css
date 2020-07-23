@@ -1,28 +1,61 @@
 body{
-    background-image: url("hintergrund.png");
+    background-color: rgb(52, 51, 57);
     text-align: center;
     font-family: FreeMono, monospace;
-}
-form{
-    width: 400px;
-    margin: 10px auto 10px auto;
-    border-radius: 10px;
-    border: solid 2px black;
+    color: white;
 }
 h1{
     font-size: 50px;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
+}
+.outer{
+    margin: 10px auto 10px auto;
+    width: 25%;
+    padding: 20px;
+    border: solid 4px rgb(85, 90, 101);
+    border-radius: 25px;
 }
 h2{
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 30px; 
+  
+}
+form{
+    border-radius: 10px;
+    width: 80%;
+    margin: 5px auto 5px auto;  
+}
+input{
+    width: 100%;
+    height: 40px;
+    margin: 5px auto 10px auto; 
+    border-radius: 20px;
+    border:  solid 2px;
+    border-color: rgb(241, 178, 61) 
+}
+.aktion{
+    padding: 20px;
+    border: solid 2px rgb(2, 160, 25);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.aktion:hover{
+    background-color: rgb(2, 160, 25);
+}
+.info{
+    margin-top: 40px;
+    font-size: 20px;
+}
+.wechsel{
+    padding: 20px;
+    border: solid 2px rgb(247, 51, 51);
+    border-radius: 10px;
+    transition: 1s all ease;
+}
+.wechsel:hover{
+    background-color:  rgb(247, 51, 51);
 }
 
-input{
-    width: 300px;
-    height: 40px;
-    margin: 5px auto 20px auto;
-}
 #test2{
     display: none;
 }
+

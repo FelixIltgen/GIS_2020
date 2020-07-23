@@ -19,7 +19,7 @@ namespace Abgabe {
     document.getElementById("registbutton")?.addEventListener("click", inDB);
 
     async function inDB(): Promise<void> {
-        
+
         let formData: FormData = new FormData(document.forms[1]);
         let url: string = "https://gis2020felix.herokuapp.com";
         //let url: string = "http://localhost:8100";
@@ -27,7 +27,7 @@ namespace Abgabe {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
-        console.log(url);
+
         (<HTMLFormElement>document.getElementById("registrieren"))?.reset();
         await fetch(url);
     }
@@ -44,12 +44,27 @@ namespace Abgabe {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
-        console.log(url);
-        (<HTMLFormElement>document.getElementById("registrieren"))?.reset();
-        //let antwort: Response = await fetch(url);
-        //let antwort2: string = await antwort.text();
+        (<HTMLFormElement>document.getElementById("anmelden"))?.reset();
+        let anfragenAntwort: Response = await fetch(url); //url versenden
+        /*-----------Name in Local storage---------------*/
+        let extraQuery: string = query.toString();
+        console.log(extraQuery);
+        let extraTeil1: string[] = extraQuery.split("&");
+        let extraTeil2: string[] = extraTeil1[0].split("=");
+        console.log(extraTeil2[1]);
+        let userName: string = extraTeil2[1]; 
+        localStorage.setItem("Username", userName);
+        /*---------------Antwort des server verarbeiten----------------*/
+        let antwort: string = await anfragenAntwort.text(); //aus url text machen
+        let antwortarry: string[] = antwort.split("&&"); // text an && spliten 
         
+        if (antwortarry[1] == "true") {
+            window.location.href = "chat.html";
+        } else {
+            alert("Uppsss!! User ist nicht vorhanden");
+        }
     }
+
 
 
 

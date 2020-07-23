@@ -1,8 +1,12 @@
 "use strict";
 var Abgabe;
 (function (Abgabe) {
-    let username = "Felix: ";
+    let username = localStorage.getItem("Username");
     let chatnummer;
+    let newDiv = document.createElement("div");
+    newDiv.id = "profilll";
+    newDiv.innerHTML = "Willkommen: " + username;
+    document.getElementById("nav")?.appendChild(newDiv);
     let nachricht = [];
     function chatgenerieren() {
         for (let index = 0; index < nachricht.length; index++) {
@@ -17,14 +21,25 @@ var Abgabe;
     }
     /*----------Nachrichten schreiben----------*/
     document.getElementById("senden")?.addEventListener("click", abSenden);
-    function abSenden() {
+    async function abSenden() {
         let formData = new FormData(document.forms[0]);
+        let url = "https://gis2020felix.herokuapp.com";
+        //let url: string = "http://localhost:8100";
+        url += "/neueNachricht";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         let usernachricht = query.toString();
+        url = url + "?";
+        console.log(url);
+        document.getElementById("registrieren")?.reset();
         let nachrichtinhalt = usernachricht.split("=");
         let abc = { user: username, nachricht: nachrichtinhalt[1], chat: chatnummer };
-        nachricht.push(abc);
+        //let abcString: string = JSON.stringify(abc); 
+        console.log(abc);
+        url = url + abc.user + "\"" + abc.nachricht + "\"" + abc.chat;
+        console.log(url);
+        await fetch(url);
+        await nachrichtenLaden();
         divLöschen();
         chatgenerieren();
     }
@@ -36,21 +51,42 @@ var Abgabe;
     /*---------------Chat Auswahl--------------*/
     document.getElementById("chatroom1")?.addEventListener("click", chatWechsel1);
     document.getElementById("chatroom2")?.addEventListener("click", chatWechsel2);
-    function chatWechsel1() {
-        chatnummer = 1;
-        divLöschen();
-        chatgenerieren();
+    async function chatWechsel1() {
+        if (localStorage.getItem("Username") != null) {
+            chatnummer = 1;
+            await nachrichtenLaden();
+            divLöschen();
+            chatgenerieren();
+        }
+        else {
+            alert("so nichttttt");
+        }
     }
-    function chatWechsel2() {
-        chatnummer = 2;
-        divLöschen();
-        chatgenerieren();
+    async function chatWechsel2() {
+        if (localStorage.getItem("Username") != null) {
+            chatnummer = 2;
+            await nachrichtenLaden();
+            divLöschen();
+            chatgenerieren();
+        }
+        else {
+            alert("sooooooooooooooo nicht");
+        }
     }
     /*------------Abmelden-------------------*/
     document.getElementById("abmelden")?.addEventListener("click", abmelden);
     function abmelden() {
+        localStorage.clear();
         window.location.href = "login.html";
     }
-    /*-----------------*/
+    /*--------asdadsd---------*/
+    async function nachrichtenLaden() {
+        let url = "https://gis2020felix.herokuapp.com";
+        //let url: string = "http://localhost:8100";
+        url += "/nachrichtenLaden";
+        let dbNachrichten = await fetch(url);
+        let dbNachrichten2 = await dbNachrichten.text();
+        nachricht = JSON.parse(dbNachrichten2);
+    }
 })(Abgabe || (Abgabe = {}));
 //# sourceMappingURL=chat.js.map

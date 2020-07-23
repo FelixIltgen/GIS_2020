@@ -22,7 +22,6 @@ var Abgabe;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
-        console.log(url);
         document.getElementById("registrieren")?.reset();
         await fetch(url);
     }
@@ -36,10 +35,25 @@ var Abgabe;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
-        console.log(url);
-        document.getElementById("registrieren")?.reset();
-        //let antwort: Response = await fetch(url);
-        //let antwort2: string = await antwort.text();
+        document.getElementById("anmelden")?.reset();
+        let anfragenAntwort = await fetch(url); //url versenden
+        /*-----------Name in Local storage---------------*/
+        let extraQuery = query.toString();
+        console.log(extraQuery);
+        let extraTeil1 = extraQuery.split("&");
+        let extraTeil2 = extraTeil1[0].split("=");
+        console.log(extraTeil2[1]);
+        let userName = extraTeil2[1];
+        localStorage.setItem("Username", userName);
+        /*---------------Antwort des server verarbeiten----------------*/
+        let antwort = await anfragenAntwort.text(); //aus url text machen
+        let antwortarry = antwort.split("&&"); // text an && spliten 
+        if (antwortarry[1] == "true") {
+            window.location.href = "chat.html";
+        }
+        else {
+            alert("Uppsss!! User ist nicht vorhanden");
+        }
     }
 })(Abgabe || (Abgabe = {}));
 //# sourceMappingURL=login.js.map
