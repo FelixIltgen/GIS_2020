@@ -34,10 +34,9 @@ body{
 }
 #chat{
     width: 75%;
-    height: 535px;
+    height: 460px;
     float: right;
     margin-top: 20px;
-    margin-bottom: 10px;
     border: solid rgb(85, 90, 101)  3px;
     border-radius: 20px;
     overflow-y  : auto;
@@ -70,7 +69,7 @@ body{
 }
 #nachrichtFeld{
     width: 95%;
-    margin: 40px auto 10px auto;
+    margin: -10px auto 10px auto;
 }
 input{
     width: 100%;

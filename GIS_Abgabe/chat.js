@@ -1,7 +1,6 @@
 "use strict";
 var Abgabe;
 (function (Abgabe) {
-    location.reload();
     let username = localStorage.getItem("Username");
     let chatnummer;
     let newDiv = document.createElement("div");

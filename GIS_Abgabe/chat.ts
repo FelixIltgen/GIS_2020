@@ -6,9 +6,6 @@ namespace Abgabe {
         chat: number;
     }
 
-    location.reload();
-
-
     let username: string = localStorage.getItem("Username")!;
     let chatnummer: number;
 
