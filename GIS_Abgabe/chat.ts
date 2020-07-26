@@ -51,7 +51,6 @@ namespace Abgabe {
 
         let nachrichtInhalt: string[] = userNachricht.split("=");
         let abc: Nachrichten = { user: userName, nachricht: nachrichtInhalt[1], chat: chatNummer };
-        //let abcString: string = JSON.stringify(abc); 
         url = url + abc.user + "\"" + abc.nachricht + "\"" + abc.chat;
 
         await fetch(url);
