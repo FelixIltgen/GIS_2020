@@ -55,13 +55,14 @@ export namespace Aufgabe10 {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let path: String | null = url.pathname;
 
+// Nutzer in DB
             if (url.pathname == "/neuernutzer") {
                 user.insertOne(url.query);
             }
 
+//Nutzer anmelden
             if (url.pathname == "/nutzeranmelden") {
 
-                /*-------------------query Inhalt bearbeiten----------------*/
                 let queryInhalt: String = "";
 
                 for (let key in url.query) {
@@ -69,22 +70,21 @@ export namespace Aufgabe10 {
                 }
                 let splitArray1: string[] = queryInhalt.split("#");
 
+//Querry splitten
                 let splitArray2: string = splitArray1[2];
                 let splitArray3: string = splitArray1[1];
                 let passwort: string[] = splitArray2.split(":");
-                let nachname: string[] = splitArray3.split(":");
+                let nachName: string[] = splitArray3.split(":");
                 let pw: string = passwort[1]; 
-                let nname: string = nachname[1];
-                console.log(pw);
-                console.log(nname);
-                /*----------------------DB Inhalt-----------------------*/
-                let dbInhalt: string[] = await user.find().toArray(); //db Inhalt laden
-                let dbInhalt2: string = JSON.stringify(dbInhalt); // In String umwandeln
+                let nName: string = nachName[1];
+
+//DB Inhalt laden & vergleichen 
+                let dbInhalt: string[] = await user.find().toArray(); 
+                let dbInhalt2: string = JSON.stringify(dbInhalt); 
                 let rückgabeZuChat2: String = "";
-                console.log(dbInhalt2);
                 for (let index: number = 0; index < dbInhalt.length; index++) {
 
-                    if (dbInhalt2.includes(pw) &&  dbInhalt2.includes(nname)) {
+                    if (dbInhalt2.includes(pw) &&  dbInhalt2.includes(nName)) {
                     
                         rückgabeZuChat = "&&true&&";
                         rückgabeZuChat2 = JSON.stringify(rückgabeZuChat);
@@ -94,10 +94,9 @@ export namespace Aufgabe10 {
                         rückgabeZuChat2 = JSON.stringify(rückgabeZuChat);
                     }
                 }
-                console.log(rückgabeZuChat2);
                 _response.write(rückgabeZuChat2);
             }
-
+//Wenn neue Nachricht
             if (url.pathname == "/neueNachricht") {
         
                 let queryStringify: string = JSON.stringify(url.query);
@@ -105,7 +104,7 @@ export namespace Aufgabe10 {
                 let neueNachricht: Nachrichten = { user: queryArray[1], nachricht: queryArray[2], chat: queryArray[3] };
                 nachricht.insertOne(neueNachricht);
             }
-
+//Nachrichten Laden
             if (path == "/nachrichtenLaden") {
                 let dbNachricht: string[] = await nachricht.find().toArray(); //db Inhalt laden
                 let dbNachricht2: string = JSON.stringify(dbNachricht);

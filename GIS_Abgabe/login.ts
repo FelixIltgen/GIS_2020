@@ -1,6 +1,6 @@
 namespace Abgabe {
 
-    /*------------------Input Wechsel------------------*/
+//Wechsel zwischen Login / Registrieren
     document.getElementById("zeigen1")?.addEventListener("click", zeigRegistartion);
     document.getElementById("zeigen2")?.addEventListener("click", zeigAnmeldung);
 
@@ -14,7 +14,7 @@ namespace Abgabe {
     }
 
 
-    /*-----------------In DB schreiben--------------*/
+ //Daten in DB schreiben
 
     document.getElementById("registbutton")?.addEventListener("click", inDB);
 
@@ -31,7 +31,7 @@ namespace Abgabe {
         (<HTMLFormElement>document.getElementById("registrieren"))?.reset();
         await fetch(url);
     }
-    /*-------------------DB Abfragen---------------------*/
+//Daten aus der DB abfragen
 
     document.getElementById("anmeldbutton")?.addEventListener("click", ausDB);
 
@@ -45,8 +45,9 @@ namespace Abgabe {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
         (<HTMLFormElement>document.getElementById("anmelden"))?.reset();
-        let anfragenAntwort: Response = await fetch(url); //url versenden
-        /*-----------Name in Local storage---------------*/
+        let anfragenAntwort: Response = await fetch(url);
+
+//LocalStorage füllen
         let extraQuery: string = query.toString();
         console.log(extraQuery);
         let extraTeil1: string[] = extraQuery.split("&");
@@ -54,9 +55,10 @@ namespace Abgabe {
         console.log(extraTeil2[1]);
         let userName: string = extraTeil2[1]; 
         localStorage.setItem("Username", userName);
-        /*---------------Antwort des server verarbeiten----------------*/
-        let antwort: string = await anfragenAntwort.text(); //aus url text machen
-        let antwortarry: string[] = antwort.split("&&"); // text an && spliten 
+
+ //Antwort vom Server verarbeiten
+        let antwort: string = await anfragenAntwort.text(); 
+        let antwortarry: string[] = antwort.split("&&");  
         
         if (antwortarry[1] == "true") {
             window.location.href = "chat.html";

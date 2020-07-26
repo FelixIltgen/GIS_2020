@@ -1,22 +1,23 @@
 namespace Abgabe {
-    /*--------------Nachrichten Generieren-----*/
+
     interface Nachrichten {
         user: string;
         nachricht: string;
         chat: number;
     }
-
-    let username: string = localStorage.getItem("Username")!;
-    let chatnummer: number;
+//Username in Div anzeigen
+    let userName: string = localStorage.getItem("Username")!;
+    let chatNummer: number;
 
     let newDiv: HTMLDivElement = document.createElement("div");
     newDiv.id = "profilll";
-    newDiv.innerHTML = "Willkommen: " + username;
+    newDiv.innerHTML = "Willkommen: " + userName;
     document.getElementById("nav")?.appendChild(newDiv);
 
+//Chat Generieren
     let nachricht: Nachrichten[] = [];
 
-    function chatgenerieren(): void {
+    function chatGenerieren(): void {
 
         for (let index: number = 0; index < nachricht.length; index++) {
             let newDiv: HTMLDivElement = document.createElement("div");
@@ -24,17 +25,14 @@ namespace Abgabe {
             newDiv.id = "nachrichten" + index;
             newDiv.innerHTML = nachricht[index].user + " " + nachricht[index].nachricht;
 
-            if (nachricht[index].chat == chatnummer) {
+            if (nachricht[index].chat == chatNummer) {
                 document.getElementById("chat")?.appendChild(newDiv);
             }
         }
-                
-
     }
 
 
-    /*----------Nachrichten schreiben----------*/
-
+//Nachrichten Schreiben 
     document.getElementById("senden")?.addEventListener("click", abSenden);
 
     async function abSenden(): Promise<void> {
@@ -46,44 +44,38 @@ namespace Abgabe {
         url += "/neueNachricht";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let usernachricht: string = query.toString();
+        let userNachricht: string = query.toString();
         url = url + "?";
-        console.log("url:" + url);
         (<HTMLFormElement>document.getElementById("registrieren"))?.reset();
 
 
-        let nachrichtinhalt: string[] = usernachricht.split("=");
-        let abc: Nachrichten = { user: username, nachricht: nachrichtinhalt[1], chat: chatnummer };
+        let nachrichtInhalt: string[] = userNachricht.split("=");
+        let abc: Nachrichten = { user: userName, nachricht: nachrichtInhalt[1], chat: chatNummer };
         //let abcString: string = JSON.stringify(abc); 
-        console.log("abc" + abc);
         url = url + abc.user + "\"" + abc.nachricht + "\"" + abc.chat;
-        console.log(url);
 
         await fetch(url);
         await nachrichtenLaden();
-
+        
         divLöschen();
-        chatgenerieren();
-
-
+        chatGenerieren();
     }
+//Nachrichten Div löschen
     function divLöschen(): void {
         for (let index: number = 0; index < nachricht.length; index++) {
             document.getElementById("nachrichten" + index)?.remove();
-
         }
     }
-
-    /*---------------Chat Auswahl--------------*/
+ //Wechsel zwischen Chats 
     document.getElementById("chatroom1")?.addEventListener("click", chatWechsel1);
     document.getElementById("chatroom2")?.addEventListener("click", chatWechsel2);
 
     async function chatWechsel1(): Promise<void> {
         if (localStorage.getItem("Username") != null) {
-            chatnummer = 1;
+            chatNummer = 1;
             await nachrichtenLaden();
             divLöschen();
-            chatgenerieren();
+            chatGenerieren();
         } else {
             alert("sooooooooooooooo nicht");
         }
@@ -91,22 +83,22 @@ namespace Abgabe {
     async function chatWechsel2(): Promise<void> {
 
         if (localStorage.getItem("Username") != null) {
-            chatnummer = 2;
+            chatNummer = 2;
             await nachrichtenLaden();
             divLöschen();
-            chatgenerieren();
+            chatGenerieren();
         } else {
             alert("sooooooooooooooo nicht");
         }
     }
-    /*------------Abmelden-------------------*/
+//Abmelden
     document.getElementById("abmelden")?.addEventListener("click", abmelden);
 
     function abmelden(): void {
         localStorage.clear();
         window.location.href = "login.html";
     }
-    /*--------asdadsd---------*/
+//nachrichten aus DB laden
     async function nachrichtenLaden(): Promise<void> {
 
         let url: string = "https://gis2020felix.herokuapp.com";
@@ -114,7 +106,6 @@ namespace Abgabe {
         url += "/nachrichtenLaden";
         let dbNachrichten: Response = await fetch(url);
         let dbNachrichten2: string = await dbNachrichten.text();
-        console.log("dbNachricht2" + dbNachrichten2);
         nachricht = JSON.parse(dbNachrichten2);
     }
 }
