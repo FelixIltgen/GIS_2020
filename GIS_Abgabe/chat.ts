@@ -48,14 +48,14 @@ namespace Abgabe {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         let usernachricht: string = query.toString();
         url = url + "?";
-        console.log(url);
+        console.log("url:" + url);
         (<HTMLFormElement>document.getElementById("registrieren"))?.reset();
 
 
         let nachrichtinhalt: string[] = usernachricht.split("=");
         let abc: Nachrichten = { user: username, nachricht: nachrichtinhalt[1], chat: chatnummer };
         //let abcString: string = JSON.stringify(abc); 
-        console.log(abc);
+        console.log("abc" + abc);
         url = url + abc.user + "\"" + abc.nachricht + "\"" + abc.chat;
         console.log(url);
 
@@ -85,7 +85,7 @@ namespace Abgabe {
             divLöschen();
             chatgenerieren();
         } else {
-            alert("so nichttttt");
+            alert("sooooooooooooooo nicht");
         }
     }
     async function chatWechsel2(): Promise<void> {
@@ -114,6 +114,7 @@ namespace Abgabe {
         url += "/nachrichtenLaden";
         let dbNachrichten: Response = await fetch(url);
         let dbNachrichten2: string = await dbNachrichten.text();
+        console.log("dbNachricht2" + dbNachrichten2);
         nachricht = JSON.parse(dbNachrichten2);
     }
 }

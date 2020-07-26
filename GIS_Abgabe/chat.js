@@ -30,12 +30,12 @@ var Abgabe;
         let query = new URLSearchParams(formData);
         let usernachricht = query.toString();
         url = url + "?";
-        console.log(url);
+        console.log("url:" + url);
         document.getElementById("registrieren")?.reset();
         let nachrichtinhalt = usernachricht.split("=");
         let abc = { user: username, nachricht: nachrichtinhalt[1], chat: chatnummer };
         //let abcString: string = JSON.stringify(abc); 
-        console.log(abc);
+        console.log("abc" + abc);
         url = url + abc.user + "\"" + abc.nachricht + "\"" + abc.chat;
         console.log(url);
         await fetch(url);
@@ -59,7 +59,7 @@ var Abgabe;
             chatgenerieren();
         }
         else {
-            alert("so nichttttt");
+            alert("sooooooooooooooo nicht");
         }
     }
     async function chatWechsel2() {
@@ -86,6 +86,7 @@ var Abgabe;
         url += "/nachrichtenLaden";
         let dbNachrichten = await fetch(url);
         let dbNachrichten2 = await dbNachrichten.text();
+        console.log("dbNachricht2" + dbNachrichten2);
         nachricht = JSON.parse(dbNachrichten2);
     }
 })(Abgabe || (Abgabe = {}));

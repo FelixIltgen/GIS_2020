@@ -73,23 +73,25 @@ export namespace Aufgabe10 {
                 let splitArray3: string = splitArray1[1];
                 let passwort: string[] = splitArray2.split(":");
                 let nachname: string[] = splitArray3.split(":");
-                let pw: string = passwort[1];
+                let pw: string = passwort[1]; 
                 let nname: string = nachname[1];
+                console.log(pw);
+                console.log(nname);
                 /*----------------------DB Inhalt-----------------------*/
                 let dbInhalt: string[] = await user.find().toArray(); //db Inhalt laden
                 let dbInhalt2: string = JSON.stringify(dbInhalt); // In String umwandeln
                 let rückgabeZuChat2: String = "";
-             
+                console.log(dbInhalt2);
                 for (let index: number = 0; index < dbInhalt.length; index++) {
 
-                    if (dbInhalt2.includes(pw)/*&&  dbInhalt.includes(nname)*/ ) {
-
+                    if (dbInhalt2.includes(pw) &&  dbInhalt2.includes(nname)) {
+                    
                         rückgabeZuChat = "&&true&&";
-                        rückgabeZuChat2 += JSON.stringify(rückgabeZuChat);
+                        rückgabeZuChat2 = JSON.stringify(rückgabeZuChat);
+                        break;    
                     } else {
                         rückgabeZuChat = "&&false&&";
-                        rückgabeZuChat2 += JSON.stringify(rückgabeZuChat);
-                       
+                        rückgabeZuChat2 = JSON.stringify(rückgabeZuChat);
                     }
                 }
                 console.log(rückgabeZuChat2);

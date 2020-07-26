@@ -56,18 +56,22 @@ var Aufgabe10;
                 let nachname = splitArray3.split(":");
                 let pw = passwort[1];
                 let nname = nachname[1];
+                console.log(pw);
+                console.log(nname);
                 /*----------------------DB Inhalt-----------------------*/
                 let dbInhalt = await user.find().toArray(); //db Inhalt laden
                 let dbInhalt2 = JSON.stringify(dbInhalt); // In String umwandeln
                 let rückgabeZuChat2 = "";
+                console.log(dbInhalt2);
                 for (let index = 0; index < dbInhalt.length; index++) {
-                    if (dbInhalt2.includes(pw) /*&&  dbInhalt.includes(nname)*/) {
+                    if (dbInhalt2.includes(pw) && dbInhalt2.includes(nname)) {
                         rückgabeZuChat = "&&true&&";
-                        rückgabeZuChat2 += JSON.stringify(rückgabeZuChat);
+                        rückgabeZuChat2 = JSON.stringify(rückgabeZuChat);
+                        break;
                     }
                     else {
                         rückgabeZuChat = "&&false&&";
-                        rückgabeZuChat2 += JSON.stringify(rückgabeZuChat);
+                        rückgabeZuChat2 = JSON.stringify(rückgabeZuChat);
                     }
                 }
                 console.log(rückgabeZuChat2);
